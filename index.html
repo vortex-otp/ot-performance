@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>O.T Performance — שיווק, דאטה ואוטומציה</title>
 <meta name="description" content="מערכת שיווק, דאטה ואוטומציה שמחברת בין חשיפה, לידים, רכישות ומכירות. קמפיינים, אתרים, WhatsApp, Email, SMS, AI ואסטרטגיית צמיחה.">
+<meta name="theme-color" content="#0A0B0D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="O.T Performance — שיווק, דאטה ואוטומציה">
+<meta property="og:description" content="מערכת שיווק, דאטה ואוטומציה שמחברת בין חשיפה, לידים, רכישות ומכירות. בהובלת תמיר ואופיר.">
+<meta property="og:locale" content="he_IL">
+<meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A0B0D'/%3E%3Crect x='5' y='5' width='54' height='54' rx='10' fill='%23F7F5F0'/%3E%3Crect x='5' y='5' width='54' height='4' fill='%232F5BF0'/%3E%3Ctext x='32' y='42' font-family='Helvetica,Arial,sans-serif' font-size='22' font-weight='700' text-anchor='middle' fill='%2316171A'%3EOT%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -12,6 +19,16 @@
 </head>
 <body>
 <a class="skip-link" href="#main" data-en="Skip to main content">דילוג לתוכן הראשי</a>
+
+<!-- Sticky document bar (appears after masthead scrolls out) -->
+<div class="topbar" id="topbar">
+  <a class="topbar-brand" href="#main" aria-label="O.T Performance — לראש העמוד">
+    <span class="brand-mark en">OT</span>
+    <span class="nm">O.T Performance</span>
+  </a>
+  <span class="topbar-sec" id="topbar-sec" aria-hidden="true">Capability Profile</span>
+  <a class="masthead-cta" href="#contact" data-en="Talk to us">דברו איתנו</a>
+</div>
 
 <!-- ============ DOCUMENT ============ -->
 <main class="doc" id="main">
@@ -27,8 +44,8 @@
     </div>
     <div class="masthead-meta">
       Capability Profile<br>
-      <span id="doc-year">2026</span> · Confidential<br>
-      Rev. 01
+      <span class="yr" id="doc-year">2026</span> · Confidential<br>
+      Rev. 02
     </div>
     <div class="masthead-actions">
       <div class="lang-toggle" role="group" aria-label="Language">
@@ -41,6 +58,19 @@
 
   <!-- ===== 00 · Hero ===== -->
   <section class="section hero reveal">
+    <svg class="hero-stamp" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
+      <defs>
+        <path id="stamp-circ" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/>
+      </defs>
+      <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="1.2"/>
+      <circle cx="60" cy="60" r="34" fill="none" stroke="currentColor" stroke-width="1"/>
+      <g class="ring">
+        <text font-size="8.4" letter-spacing="2.6" fill="currentColor" font-family="'Space Grotesk',sans-serif" font-weight="500">
+          <textPath href="#stamp-circ">PERFORMANCE · DATA · AUTOMATION · AI · </textPath>
+        </text>
+      </g>
+      <text x="60" y="66" text-anchor="middle" font-size="17" font-weight="600" fill="currentColor" font-family="'Space Grotesk',sans-serif">OT</text>
+    </svg>
     <div class="hero-kicker eyebrow">Company Capability Profile</div>
     <h1 class="en">O.T Performance<br><span class="thin">Capability Profile</span></h1>
     <p class="hero-lead" data-en="A marketing, data and automation system that connects exposure, leads, purchases and sales.">מערכת שיווק, דאטה ואוטומציה שמחברת בין חשיפה, לידים, רכישות ומכירות.</p>
@@ -73,8 +103,24 @@
     </div>
   </section>
 
+  <!-- ===== Contents ===== -->
+  <nav class="toc reveal" aria-label="תוכן העניינים">
+    <div class="toc-title eyebrow">Contents · Index</div>
+    <ol class="toc-list">
+      <li><a href="#s01"><span class="toc-num">01</span><span class="toc-he" data-en="Company Snapshot">תקציר חברה</span><span class="toc-dots"></span><span class="toc-en">Snapshot</span></a></li>
+      <li><a href="#s02"><span class="toc-num">02</span><span class="toc-he" data-en="Skill Matrix">מפת יכולות</span><span class="toc-dots"></span><span class="toc-en">Matrix</span></a></li>
+      <li><a href="#s03"><span class="toc-num">03</span><span class="toc-he" data-en="Tracking &amp; Data">טראקינג, דאטה ואנליטיקה</span><span class="toc-dots"></span><span class="toc-en">Data</span></a></li>
+      <li><a href="#s04"><span class="toc-num">04</span><span class="toc-he" data-en="Strategy &amp; Segmentation">אסטרטגיה ופילוח</span><span class="toc-dots"></span><span class="toc-en">Strategy</span></a></li>
+      <li><a href="#s05"><span class="toc-num">05</span><span class="toc-he" data-en="Platforms &amp; Systems">פלטפורמות ומערכות</span><span class="toc-dots"></span><span class="toc-en">Systems</span></a></li>
+      <li><a href="#s06"><span class="toc-num">06</span><span class="toc-he" data-en="How We Work">איך אנחנו עובדים</span><span class="toc-dots"></span><span class="toc-en">Method</span></a></li>
+      <li><a href="#s07"><span class="toc-num">07</span><span class="toc-he" data-en="Results We Focus On">במה אנחנו מודדים הצלחה</span><span class="toc-dots"></span><span class="toc-en">Results</span></a></li>
+      <li><a href="#s08"><span class="toc-num">08</span><span class="toc-he" data-en="FAQ">שאלות נפוצות</span><span class="toc-dots"></span><span class="toc-en">FAQ</span></a></li>
+      <li><a href="#contact"><span class="toc-num">09</span><span class="toc-he" data-en="Get In Touch">צרו קשר</span><span class="toc-dots"></span><span class="toc-en">Contact</span></a></li>
+    </ol>
+  </nav>
+
   <!-- ===== 01 · תקציר חברה ===== -->
-  <section class="section reveal">
+  <section class="section reveal" id="s01">
     <div class="section-head">
       <div class="section-num en">01</div>
       <div class="section-titles">
@@ -102,7 +148,7 @@
   </section>
 
   <!-- ===== 02 · מפת יכולות ===== -->
-  <section class="section reveal">
+  <section class="section reveal" id="s02">
     <div class="section-head">
       <div class="section-num en">02</div>
       <div class="section-titles">
@@ -182,7 +228,7 @@
   </section>
 
   <!-- ===== 03 · טראקינג, דאטה ואנליטיקה ===== -->
-  <section class="section reveal">
+  <section class="section reveal" id="s03">
     <div class="section-head">
       <div class="section-num en">03</div>
       <div class="section-titles">
@@ -192,7 +238,7 @@
       </div>
     </div>
 
-    <p class="hero-body" style="max-width:64ch;margin-bottom:38px" data-en="We build a data layer that reveals where leads come from, what drives purchases, where users drop off and how to improve performance.">אנחנו בונים לעסק שכבת דאטה שמאפשרת להבין מאיפה מגיעים הלידים, מה מייצר רכישות, איפה המשתמשים נופלים ואיך לשפר את הביצועים.</p>
+    <p class="section-lead" data-en="We build a data layer that reveals where leads come from, what drives purchases, where users drop off and how to improve performance.">אנחנו בונים לעסק שכבת דאטה שמאפשרת להבין מאיפה מגיעים הלידים, מה מייצר רכישות, איפה המשתמשים נופלים ואיך לשפר את הביצועים.</p>
 
     <!-- flow -->
     <div class="flow">
@@ -282,7 +328,7 @@
   </section>
 
   <!-- ===== 04 · אסטרטגיה ופילוח ===== -->
-  <section class="section reveal">
+  <section class="section reveal" id="s04">
     <div class="section-head">
       <div class="section-num en">04</div>
       <div class="section-titles">
@@ -331,7 +377,7 @@
   </section>
 
   <!-- ===== 05 · פלטפורמות ===== -->
-  <section class="section reveal">
+  <section class="section reveal" id="s05">
     <div class="section-head">
       <div class="section-num en">05</div>
       <div class="section-titles">
@@ -347,7 +393,7 @@
   </section>
 
   <!-- ===== 06 · תהליך עבודה ===== -->
-  <section class="section reveal">
+  <section class="section reveal" id="s06">
     <div class="section-head">
       <div class="section-num en">06</div>
       <div class="section-titles">
@@ -386,7 +432,7 @@
   </section>
 
   <!-- ===== 07 · תוצאות ===== -->
-  <section class="section reveal">
+  <section class="section reveal" id="s07">
     <div class="section-head">
       <div class="section-num en">07</div>
       <div class="section-titles">
@@ -412,10 +458,49 @@
     </div>
   </section>
 
-  <!-- ===== 08 · צרו קשר ===== -->
-  <section class="section contact reveal" id="contact">
+  <!-- ===== 08 · שאלות נפוצות ===== -->
+  <section class="section reveal" id="s08">
     <div class="section-head">
       <div class="section-num en">08</div>
+      <div class="section-titles">
+        <span class="en-label">Frequently Asked Questions</span>
+        <span class="he-title" data-en="Frequently Asked Questions">שאלות נפוצות</span>
+        <span class="he-sub" data-en="Short, honest answers to the questions we hear most.">תשובות קצרות וכנות לשאלות שאנחנו שומעים הכי הרבה.</span>
+      </div>
+    </div>
+
+    <div class="faq">
+      <details class="faq-item">
+        <summary><span class="faq-idx">Q.01</span><span class="faq-q" data-en="What happens in the first month of working together?">מה קורה בחודש הראשון של העבודה?</span><span class="faq-chev" aria-hidden="true">+</span></summary>
+        <p class="faq-body" data-en="The first month is audit and setup: we review everything that exists, fix the tracking, build the strategy, set up campaigns and automations — and go live. From day one you see exactly what is happening.">החודש הראשון הוא אבחון והקמה: עוברים על כל מה שקיים, מתקנים את המדידה, בונים אסטרטגיה, מקימים קמפיינים ואוטומציות — ועולים לאוויר. מהיום הראשון אתם רואים בדיוק מה קורה.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-idx">Q.02</span><span class="faq-q" data-en="How long until we see results?">כמה זמן לוקח לראות תוצאות?</span><span class="faq-chev" aria-hidden="true">+</span></summary>
+        <p class="faq-body" data-en="Leads usually start arriving within the first days after launch. Real optimization — lowering costs and improving lead quality — takes a few weeks of data. We don't promise magic numbers before seeing your data; whoever does is guessing.">לידים בדרך כלל מתחילים להגיע כבר בימים הראשונים אחרי ההשקה. אופטימיזציה אמיתית — הוזלת עלויות ושיפור איכות לידים — דורשת כמה שבועות של דאטה. אנחנו לא מבטיחים מספרי קסם לפני שראינו את הדאטה שלכם; מי שמבטיח — מנחש.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-idx">Q.03</span><span class="faq-q" data-en="Who handles the leads after they arrive?">מי מטפל בלידים אחרי שהם מגיעים?</span><span class="faq-chev" aria-hidden="true">+</span></summary>
+        <p class="faq-body" data-en="The system handles the first response: an automatic WhatsApp message within seconds, qualification, tagging and routing to your sales team. Your team closes — but no lead waits and no lead disappears.">המערכת מטפלת במענה הראשוני: הודעת WhatsApp אוטומטית תוך שניות, סינון, תיוג וניתוב לצוות המכירות שלכם. הצוות שלכם סוגר — אבל אף ליד לא מחכה ואף ליד לא נעלם.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-idx">Q.04</span><span class="faq-q" data-en="Do you work with small budgets?">אתם עובדים גם עם תקציבים קטנים?</span><span class="faq-chev" aria-hidden="true">+</span></summary>
+        <p class="faq-body" data-en="What matters is the fit between budget, goal and market — not the size. In the first call we'll tell you honestly whether your budget can produce a real outcome, and if not, what the alternative is.">מה שקובע זה ההתאמה בין תקציב, מטרה ושוק — לא הגודל. בשיחה הראשונה נגיד בכנות אם התקציב יכול לייצר תוצאה אמיתית, ואם לא — מה האלטרנטיבה.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-idx">Q.05</span><span class="faq-q" data-en="Is there a long-term commitment?">יש התחייבות לתקופה ארוכה?</span><span class="faq-chev" aria-hidden="true">+</span></summary>
+        <p class="faq-body" data-en="The work is monthly and transparent. Every asset we build — campaigns, tracking, automations — belongs to you and stays with you. We keep clients through results, not contracts.">העבודה חודשית ושקופה. כל נכס שאנחנו בונים — קמפיינים, מדידה, אוטומציות — שייך לכם ונשאר אצלכם. אנחנו שומרים לקוחות דרך תוצאות, לא דרך חוזים.</p>
+      </details>
+      <details class="faq-item">
+        <summary><span class="faq-idx">Q.06</span><span class="faq-q" data-en="How do we get started?">איך מתחילים?</span><span class="faq-chev" aria-hidden="true">+</span></summary>
+        <p class="faq-body" data-en="Send a WhatsApp message or leave your details below. We'll schedule a short call, understand the business and goals, and come back with an initial picture: what works today, what leaks, and what we would do first.">שולחים הודעת WhatsApp או משאירים פרטים למטה. נקבע שיחה קצרה, נבין את העסק והמטרות, ונחזור עם תמונה ראשונית: מה עובד היום, איפה דולף, ומה היינו עושים קודם.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- ===== 09 · צרו קשר ===== -->
+  <section class="section contact reveal" id="contact">
+    <div class="section-head">
+      <div class="section-num en">09</div>
       <div class="section-titles">
         <span class="en-label">Get In Touch</span>
         <span class="he-title" data-en="Get In Touch">צרו קשר</span>
@@ -427,7 +512,7 @@
       <div>
         <h2 data-en="Want to see what can be improved in your business?">רוצים להבין מה אפשר לשפר אצלכם?</h2>
         <p class="contact-lead" data-en="Leave your details or send a message, and we'll look at how to connect campaigns, website, WhatsApp, Email, SMS, AI and data into one marketing system that works better.">השאירו פרטים או שלחו הודעה, ונבדוק איך אפשר לחבר לכם קמפיינים, אתר, WhatsApp, Email, SMS, AI ודאטה למערכת שיווק אחת שעובדת טוב יותר.</p>
-        <div class="cta-row" style="margin-top:0">
+        <div class="cta-row tight">
           <a class="btn btn-wa" href="https://wa.me/972500000000" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 21.5a9.4 9.4 0 0 1-4.8-1.3l-.3-.2-3.6.9 1-3.5-.2-.4A9.5 9.5 0 1 1 12 21.5m0-20.8a11 11 0 0 0-9.4 16.6L.5 23.5l6-1.6A11 11 0 1 0 12 .7"/></svg>
             <span data-en="Message us on WhatsApp">שליחת הודעה ב-WhatsApp</span>
@@ -441,9 +526,10 @@
             <label for="f-name" data-en="Full name">שם מלא</label>
             <input id="f-name" name="name" type="text" required autocomplete="name">
           </div>
-          <div class="field">
+          <div class="field" id="field-phone">
             <label for="f-phone" data-en="Phone">טלפון</label>
-            <input id="f-phone" name="phone" type="tel" required autocomplete="tel">
+            <input id="f-phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" aria-describedby="f-phone-err">
+            <span class="field-err" id="f-phone-err" data-en="Please enter a valid phone number">נא להזין מספר טלפון תקין</span>
           </div>
           <div class="field">
             <label for="f-biz" data-en="Business name">שם העסק</label>
@@ -454,11 +540,28 @@
             <textarea id="f-msg" name="message" rows="3"></textarea>
           </div>
           <button class="btn btn-primary" type="submit" data-en="Send">שליחה</button>
+          <p class="form-note" data-en="No spam. Your details are never shared with anyone.">בלי ספאם. הפרטים לא מועברים לאף גורם אחר.</p>
         </form>
         <div class="form-success" id="form-success">
           <div class="ok"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12l4.5 4.5L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           <div data-en="Got it. We'll get back to you shortly.">הפרטים התקבלו. נחזור אליכם בהקדם.</div>
+          <a class="btn btn-wa" id="success-wa" href="https://wa.me/972500000000" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.5 14.4c-.3-.2-1.7-.8-2-.9-.3-.1-.5-.2-.6.2-.2.3-.7.9-.8 1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.5-.5c.1-.2.2-.3.3-.5 0-.2 0-.4 0-.5 0-.2-.6-1.5-.9-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.2.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3M12 21.5a9.4 9.4 0 0 1-4.8-1.3l-.3-.2-3.6.9 1-3.5-.2-.4A9.5 9.5 0 1 1 12 21.5m0-20.8a11 11 0 0 0-9.4 16.6L.5 23.5l6-1.6A11 11 0 1 0 12 .7"/></svg>
+            <span data-en="Speed things up — send it on WhatsApp too">לזירוז — שלחו את הפרטים גם ב-WhatsApp</span>
+          </a>
+          <div class="sub" data-en="One tap. The message is already written for you.">לחיצה אחת. ההודעה כבר כתובה בשבילכם.</div>
         </div>
+      </div>
+    </div>
+
+    <div class="doc-sign">
+      <div>
+        <div class="sig-name en">O.T Performance</div>
+        <div class="sig-role" data-en="Prepared and signed by Tamir &amp; Ofir">הוכן ונחתם על ידי תמיר ואופיר</div>
+      </div>
+      <div class="sig-meta">
+        Capability Profile · Rev. 02<br>
+        <span class="yr">2026</span> · Tel Aviv
       </div>
     </div>
   </section>
@@ -473,7 +576,7 @@
   <footer class="doc-footer">
     <span>O.T Performance · Capability Profile</span>
     <span>Performance · Data · Automation · AI</span>
-    <span>&copy; <span id="doc-year-2">2026</span></span>
+    <span>&copy; <span class="yr">2026</span></span>
   </footer>
 
 </main>
@@ -487,9 +590,57 @@
 <script src="script.js"></script>
 <script src="lang.js"></script>
 <script src="accessibility.js"></script>
-<script>
-  var y2 = document.getElementById('doc-year-2');
-  if (y2) y2.textContent = new Date().getFullYear();
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "name": "O.T Performance",
+      "description": "חברת שיווק, דאטה ואוטומציה. קמפיינים ממומנים, אתרים, WhatsApp, Email, SMS, AI, טראקינג ואסטרטגיית צמיחה.",
+      "founder": [
+        { "@type": "Person", "name": "Tamir" },
+        { "@type": "Person", "name": "Ofir" }
+      ],
+      "areaServed": "IL"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "מה קורה בחודש הראשון של העבודה?",
+          "acceptedAnswer": { "@type": "Answer", "text": "החודש הראשון הוא אבחון והקמה: עוברים על כל מה שקיים, מתקנים את המדידה, בונים אסטרטגיה, מקימים קמפיינים ואוטומציות — ועולים לאוויר." }
+        },
+        {
+          "@type": "Question",
+          "name": "כמה זמן לוקח לראות תוצאות?",
+          "acceptedAnswer": { "@type": "Answer", "text": "לידים בדרך כלל מתחילים להגיע כבר בימים הראשונים אחרי ההשקה. אופטימיזציה אמיתית דורשת כמה שבועות של דאטה." }
+        },
+        {
+          "@type": "Question",
+          "name": "מי מטפל בלידים אחרי שהם מגיעים?",
+          "acceptedAnswer": { "@type": "Answer", "text": "המערכת מטפלת במענה הראשוני: הודעת WhatsApp אוטומטית תוך שניות, סינון, תיוג וניתוב לצוות המכירות שלכם." }
+        },
+        {
+          "@type": "Question",
+          "name": "אתם עובדים גם עם תקציבים קטנים?",
+          "acceptedAnswer": { "@type": "Answer", "text": "מה שקובע זה ההתאמה בין תקציב, מטרה ושוק — לא הגודל. בשיחה הראשונה נגיד בכנות אם התקציב יכול לייצר תוצאה אמיתית." }
+        },
+        {
+          "@type": "Question",
+          "name": "יש התחייבות לתקופה ארוכה?",
+          "acceptedAnswer": { "@type": "Answer", "text": "העבודה חודשית ושקופה. כל נכס שאנחנו בונים שייך לכם ונשאר אצלכם. אנחנו שומרים לקוחות דרך תוצאות, לא דרך חוזים." }
+        },
+        {
+          "@type": "Question",
+          "name": "איך מתחילים?",
+          "acceptedAnswer": { "@type": "Answer", "text": "שולחים הודעת WhatsApp או משאירים פרטים באתר. נקבע שיחה קצרה, נבין את העסק והמטרות, ונחזור עם תמונה ראשונית." }
+        }
+      ]
+    }
+  ]
+}
 </script>
 </body>
 </html>
