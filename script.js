@@ -48,6 +48,52 @@
   }, { passive: true });
   updateProgress();
 
+  var labRange = document.getElementById('motion-range');
+  var labPanel = document.querySelector('.lab-panel');
+  var labVisual = document.querySelector('.lab-visual');
+  var labStatus = document.querySelector('.lab-status');
+  var labStep = document.querySelector('.lab-step');
+  var labLive = document.getElementById('motion-live');
+  var labWords = {
+    he: ['כיוון', 'תנועה', 'מערכת', 'צמיחה'],
+    en: ['Direction', 'Motion', 'System', 'Growth']
+  };
+
+  function updateLab(announce) {
+    if (!labRange || !labPanel || !labVisual || !labStatus) return;
+    var value = Number(labRange.value);
+    var step = Math.min(3, Math.floor(value / 25));
+    var activeLang = document.documentElement.lang === 'en' ? 'en' : 'he';
+    var word = labWords[activeLang][step];
+
+    labPanel.style.setProperty('--lab-fill', value + '%');
+    labPanel.style.setProperty('--lab-f1x', (-14 - value * 0.62).toFixed(1) + 'px');
+    labPanel.style.setProperty('--lab-f1y', (-8 - value * 0.12).toFixed(1) + 'px');
+    labPanel.style.setProperty('--lab-f1r', (-2 - value * 0.075).toFixed(1) + 'deg');
+    labPanel.style.setProperty('--lab-f2x', (-5 - value * 0.22).toFixed(1) + 'px');
+    labPanel.style.setProperty('--lab-f2y', (-3 - value * 0.04).toFixed(1) + 'px');
+    labPanel.style.setProperty('--lab-f2r', (-0.5 - value * 0.025).toFixed(1) + 'deg');
+    labPanel.style.setProperty('--lab-f3x', (5 + value * 0.22).toFixed(1) + 'px');
+    labPanel.style.setProperty('--lab-f3y', (3 + value * 0.04).toFixed(1) + 'px');
+    labPanel.style.setProperty('--lab-f3r', (0.5 + value * 0.025).toFixed(1) + 'deg');
+    labPanel.style.setProperty('--lab-f4x', (14 + value * 0.62).toFixed(1) + 'px');
+    labPanel.style.setProperty('--lab-f4y', (8 + value * 0.12).toFixed(1) + 'px');
+    labPanel.style.setProperty('--lab-f4r', (2 + value * 0.075).toFixed(1) + 'deg');
+    labPanel.style.setProperty('--lab-origin-x', (-108 + value * 2.16).toFixed(1) + 'px');
+    labVisual.setAttribute('data-step', String(step));
+    labStatus.textContent = word;
+    if (labStep) labStep.textContent = '0' + (step + 1) + ' / 04';
+    labRange.setAttribute('aria-valuetext', word + ', ' + value + '%');
+    if (announce && labLive) labLive.textContent = word;
+  }
+
+  if (labRange) {
+    labRange.addEventListener('input', function () { updateLab(false); });
+    labRange.addEventListener('change', function () { updateLab(true); });
+    window.addEventListener('firstmotion:language', function () { updateLab(false); });
+    updateLab(false);
+  }
+
   var faqItems = document.querySelectorAll('.faq-list details');
   faqItems.forEach(function (item) {
     item.addEventListener('toggle', function () {

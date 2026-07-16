@@ -31,6 +31,7 @@
     });
 
     try { localStorage.setItem(KEY, lang); } catch (e) {}
+    window.dispatchEvent(new CustomEvent('firstmotion:language', { detail: { lang: lang } }));
   }
 
   window.__setLang = apply;
