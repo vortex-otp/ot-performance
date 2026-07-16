@@ -7,7 +7,7 @@
   --violet: oklch(31% 0.13 285);
   --violet-2: oklch(41% 0.17 285);
   --coral: oklch(70% 0.19 35);
-  --coral-dark: oklch(57% 0.2 35);
+  --coral-dark: oklch(51% 0.2 35);
   --mint: oklch(84% 0.12 155);
   --white: oklch(99% 0.008 88);
   --rule: oklch(22% 0.055 285 / 16%);
@@ -242,7 +242,7 @@ img, svg { display: block; max-width: 100%; }
 .leak-map { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr auto 1fr; align-items: center; margin-top: 80px; direction: rtl; }
 .leak-map > div { min-height: 112px; padding: 20px 14px; display: grid; align-content: center; text-align: center; border: 1px solid var(--rule-light); }
 .leak-map strong { font-size: 18px; }
-.leak-map small { color: oklch(96% 0.015 88 / 45%); font: 600 10px/1.3 var(--font-en); }
+.leak-map small { color: oklch(96% 0.015 88 / 68%); font: 600 10px/1.3 var(--font-en); }
 .leak-map i { width: 44px; height: 1px; display: block; position: relative; background: var(--mint); }
 .leak-map i.leaking { background: var(--coral); }
 .leak-map i.leaking::after { content: ""; position: absolute; top: -3px; left: 18px; width: 7px; height: 7px; background: var(--coral); border-radius: 50%; box-shadow: 0 15px 0 oklch(70% 0.19 35 / 50%); }
@@ -375,41 +375,78 @@ img, svg { display: block; max-width: 100%; }
 
 @media (max-width: 700px) {
   body { font-size: 16px; }
+  .reveal { opacity: 1; transform: none; transition: none; }
   .site-header { min-height: 66px; }
   .logo-copy { display: none; }
   .main-nav { top: 66px; }
   .hero { min-height: auto; }
-  .hero-copy { min-height: 610px; padding-top: 90px; }
-  .hero h1 { font-size: clamp(46px, 15vw, 70px); }
+  .hero-copy { min-height: auto; padding-top: 76px; padding-bottom: 38px; }
+  .hero-copy::before { top: 28px; }
+  .kicker { margin-bottom: 18px; font-size: 10px; line-height: 1.4; }
+  .hero h1 { max-width: 12ch; font-size: clamp(38px, 11.5vw, 46px); line-height: .99; letter-spacing: -.04em; }
+  .hero-lead { margin-top: 24px; font-size: 17px; line-height: 1.58; }
   .hero-actions { align-items: stretch; flex-direction: column; }
+  .hero-actions { gap: 16px; margin-top: 28px; }
+  .button { min-height: 48px; }
   .text-link { width: max-content; }
-  .truth-strip { display: grid; }
-  .system-board { min-height: 540px; }
+  .truth-strip { display: grid; gap: 8px; margin-top: 34px; padding-top: 18px; }
+  .system-board { min-height: 500px; }
+  .board-result { display: none; }
   .signal { width: 150px; min-height: 88px; padding: 13px; }
   .signal-a { top: 16%; right: 5%; }
   .signal-b { top: 38%; right: auto; left: 6%; }
   .signal-c { bottom: 24%; left: auto; right: 7%; }
   .signal-d { bottom: 7%; right: auto; left: 8%; }
   .signal strong { font-size: 17px; }
-  .section { padding-block: 82px; }
-  .section-intro h2, .leak h2, .method h2, .contact h2 { font-size: clamp(40px, 13vw, 58px); }
+  .section { padding-block: 64px; }
+  .section-index { margin-bottom: 12px; }
+  .section-intro { gap: 10px; }
+  .section-intro h2, .leak h2, .method h2, .contact h2 { max-width: 11ch; font-size: clamp(35px, 10.8vw, 46px); line-height: 1.04; letter-spacing: -.035em; }
+  .section-intro > p:last-child, .leak-copy > p:last-child, .contact-main p:last-child { margin-top: 14px; font-size: 16px; line-height: 1.65; }
+  .fit-list { margin-top: 44px; }
   .fit-list article { grid-template-columns: 44px 1fr; gap: 12px; }
+  .fit-list article { padding: 22px 0; }
+  .fit-list h3 { font-size: 23px; }
   .fit-list .fit-check { padding: 20px; }
+  .leak-map { margin-top: 48px; }
   .leak-map { grid-template-columns: 1fr; gap: 0; }
   .leak-map i { width: 1px; height: 28px; justify-self: center; }
   .leak-map i.leaking::after { top: 10px; left: -3px; box-shadow: 14px 0 0 oklch(70% 0.19 35 / 50%); }
   .leak-map > div { min-height: 84px; }
-  .system-layers article { grid-template-columns: 52px 1fr; gap: 12px; }
+  .system-layers { margin-top: 48px; }
+  .system-layers article { grid-template-columns: 44px 1fr; gap: 10px; padding: 26px 0; }
+  .layer-num { font-size: 38px; }
   .system-layers article > div { grid-template-columns: 1fr; gap: 9px; }
   .system-layers article > div > p:not(.layer-label), .system-layers ul { grid-column: 1; }
   .system-layers ul { margin-top: 7px; }
-  .method-steps li { grid-template-columns: 42px 1fr; gap: 10px; }
+  .method-steps { margin-top: 48px; }
+  .method-steps li { grid-template-columns: 36px 1fr; gap: 10px; padding: 22px 0; }
   .method-steps li > div { grid-template-columns: 1fr; gap: 5px; }
+  .method-steps h3 { font-size: 23px; }
+  .first-month { margin-top: 38px; padding: 24px 20px; }
+  .first-month h3 { font-size: 28px; }
+  .principle-grid { margin-top: 48px; }
   .principle-grid { grid-template-columns: 1fr; }
   .principle-grid article { min-height: auto; padding: 26px 0; border-inline-end: 0; border-bottom: 1px solid var(--rule); }
   .principle-grid article:last-child { border-bottom: 0; }
   .principle-grid h3 { margin: 35px 0 10px; }
+  .faq-list { margin-top: 44px; }
+  .faq-list summary { min-height: 70px; font-size: 19px; line-height: 1.35; }
+  .contact { gap: 36px; }
+  .contact-status { min-height: 130px; padding: 22px; }
+  .site-footer { min-height: 0; padding-block: 30px; gap: 24px; }
   .doc-footer { flex-direction: column; }
+}
+
+@media (max-width: 360px) {
+  :root { --pad: 18px; }
+  .site-header { gap: 8px; padding-inline: 18px; }
+  .header-actions { gap: 7px; }
+  .logo-mark { width: 40px; height: 40px; }
+  .hero h1 { font-size: 38px; }
+  .hero-lead { font-size: 16px; }
+  .section-intro h2, .leak h2, .method h2, .contact h2 { font-size: 35px; }
+  .signal { width: 138px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
