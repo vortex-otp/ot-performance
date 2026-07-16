@@ -69,24 +69,38 @@
     <section class="motion-lab" id="motion-lab" aria-labelledby="motion-lab-title">
       <div class="lab-copy reveal">
         <p class="section-index light">FIRST MOVE / INTERACTIVE</p>
-        <h2 id="motion-lab-title"><span data-en="Move one frame.">מזיזים פריים אחד.</span><em data-en="The whole system responds.">כל המערכת מגיבה.</em></h2>
-        <p data-en="Drag the first move and watch direction become motion, a system and then growth. It is the way we think: every action should move what comes after it.">גררו את המהלך הראשון וראו איך כיוון הופך לתנועה, למערכת ואז לצמיחה. ככה אנחנו חושבים: כל פעולה צריכה להזיז את מה שבא אחריה.</p>
+        <h2 id="motion-lab-title"><span data-en="Catch the signal.">תפסו את האות.</span><em data-en="Connect the system.">חברו את המערכת.</em></h2>
+        <p data-en="Stop the moving signal inside the frame. Four accurate hits connect the journey from attention to revenue. Each round gets faster and the target gets tighter.">עצרו את האות הנע בתוך הפריים. ארבע פגיעות מדויקות מחברות את המסע מקשב ועד להכנסה. בכל סיבוב המהירות עולה והמטרה מצטמצמת.</p>
       </div>
-      <div class="lab-panel reveal" style="--lab-fill: 18%">
-        <div class="lab-visual" data-step="0" aria-hidden="true">
-          <span class="lab-frame lab-frame-1"></span>
-          <span class="lab-frame lab-frame-2"></span>
-          <span class="lab-frame lab-frame-3"></span>
-          <span class="lab-frame lab-frame-4"></span>
-          <span class="lab-origin"></span>
-          <strong class="lab-status">כיוון</strong>
-          <small class="lab-step">01 / 04</small>
+      <div class="lab-panel game-panel reveal" data-state="idle" data-round="0">
+        <div class="game-topline">
+          <strong class="game-score"><span data-en="Score">ניקוד</span> <b>0000</b></strong>
+          <span class="game-best"><span data-en="Best">שיא</span> <b>0000</b></span>
         </div>
-        <div class="lab-control">
-          <label for="motion-range" data-en="Move the first frame">הזיזו את הפריים הראשון</label>
-          <input id="motion-range" type="range" min="0" max="100" value="18" step="1" aria-describedby="motion-range-help">
-          <div class="lab-scale" id="motion-range-help"><span data-en="Direction">כיוון</span><span data-en="Motion">תנועה</span><span data-en="System">מערכת</span><span data-en="Growth">צמיחה</span></div>
-          <span class="sr-only" id="motion-live" aria-live="polite"></span>
+        <ol class="game-progress" aria-label="שלבי המשחק" data-en-label="Game stages">
+          <li class="active"><span>01</span><strong data-en="Attention">קשב</strong></li>
+          <li><span>02</span><strong data-en="Action">פעולה</strong></li>
+          <li><span>03</span><strong data-en="Lead">ליד</strong></li>
+          <li><span>04</span><strong data-en="Revenue">הכנסה</strong></li>
+        </ol>
+        <div class="game-arena" aria-hidden="true">
+          <span class="game-rail"></span>
+          <span class="game-target"><i></i><small>HIT</small></span>
+          <span class="game-signal"></span>
+          <span class="game-flash"></span>
+          <strong class="game-arena-title">FIRST<br>MOTION</strong>
+          <small class="game-round">ROUND 01 / 04</small>
+        </div>
+        <div class="game-feedback" id="game-feedback" aria-live="polite">
+          <strong data-en="Ready for the first move?">מוכנים למהלך הראשון?</strong>
+          <span data-en="Press start, then lock the signal inside the frame.">לחצו התחלה ואז נעלו את האות בתוך הפריים.</span>
+        </div>
+        <button class="game-action" id="game-action" type="button" aria-describedby="game-help"><span data-en="Start game">התחילו לשחק</span><kbd>SPACE</kbd></button>
+        <p class="game-help" id="game-help" data-en="Tap the button or press Space when the square enters the target.">לחצו על הכפתור או על מקש הרווח כשהריבוע נכנס למטרה.</p>
+        <div class="game-complete" hidden>
+          <strong data-en="System connected.">המערכת מחוברת.</strong>
+          <p><span data-en="Final score">ניקוד סופי</span> <b>0000</b></p>
+          <button class="game-restart" type="button" data-en="Play again">שחקו שוב</button>
         </div>
       </div>
     </section>
