@@ -2,15 +2,16 @@
 
 ## Direction
 
-Energetic, engineered and optimistic. The site should feel like a living momentum system in a bright strategy room, not a dark dashboard or a colorful agency template. The committed mineral-blue palette carries the brand while solar yellow and motion orange mark action.
+Confident, editorial and kinetic. The identity is built around the first frame: one clear decision that creates the next movement. It should feel like a senior creative and growth office, never a SaaS dashboard or a collage of service cards.
 
 ## Palette
 
-- Deep mineral: `oklch(32% 0.11 265)`
-- Motion blue: `oklch(49% 0.19 265)`
-- Warm canvas: `oklch(97% 0.022 85)`
-- Motion orange: `oklch(72% 0.18 40)`
-- Solar yellow: `oklch(88% 0.16 95)`
+- Aubergine ink: `oklch(25% 0.075 320)`
+- Deep plum: `oklch(42% 0.185 315)`
+- Warm canvas: `oklch(96.5% 0.026 88)`
+- Motion coral: `oklch(69% 0.205 28)`
+- Acid yellow: `oklch(88% 0.15 100)`
+- Lilac frame: `oklch(79% 0.11 305)`
 - All colors must retain accessible contrast at WCAG 2.2 AA.
 
 ## Typography
@@ -21,6 +22,6 @@ Energetic, engineered and optimistic. The site should feel like a living momentu
 
 ## Shape and Motion
 
-- Tight radii, thin rules and monoline diagrams.
-- Motion communicates a live signal: path traces, status pulses and restrained depth.
+- Tight radii, thin rules, oversized type and offset frame geometry.
+- Motion communicates sequence and forward progress through reveals and a restrained editorial marquee.
 - Use only opacity and transforms for continuous motion, with reduced-motion fallbacks.

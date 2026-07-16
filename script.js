@@ -33,23 +33,6 @@
     reveals.forEach(function (element) { element.classList.add('in'); });
   }
 
-  var board = document.querySelector('.system-board');
-  var canParallax = window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
-    !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (board && canParallax) {
-    board.addEventListener('pointermove', function (event) {
-      var rect = board.getBoundingClientRect();
-      var x = ((event.clientX - rect.left) / rect.width - 0.5) * 14;
-      var y = ((event.clientY - rect.top) / rect.height - 0.5) * 14;
-      board.style.setProperty('--board-x', x.toFixed(2) + 'px');
-      board.style.setProperty('--board-y', y.toFixed(2) + 'px');
-    });
-    board.addEventListener('pointerleave', function () {
-      board.style.setProperty('--board-x', '0px');
-      board.style.setProperty('--board-y', '0px');
-    });
-  }
-
   var scheduled = false;
   function updateProgress() {
     if (!header) return;
