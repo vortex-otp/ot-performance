@@ -1,5 +1,5 @@
 // ============================================================
-//  Wave Zero — Accessibility widget
+//  First Motion — Accessibility widget
 //  Israeli IS-5568 / WCAG 2.0 AA helper. Self-injecting.
 //  Include on every page:  <script src="accessibility.js"></script>
 // ============================================================

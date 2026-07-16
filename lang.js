@@ -1,5 +1,5 @@
 // ============================================================
-//  Wave Zero — Language toggle (HE / EN)
+//  First Motion — Language toggle (HE / EN)
 //  Generic engine. HTML is authored in Hebrew; English lives in
 //  data-en attributes. Setting persists across pages.
 //  Include on every page AFTER content:

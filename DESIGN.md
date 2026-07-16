@@ -1,15 +1,16 @@
-# Wave Zero Design System
+# First Motion Design System
 
 ## Direction
 
-Precise, engineered and assured. The site should feel like a live growth control system, not a colorful agency template. Visual reference: Braun industrial controls translated into a contemporary digital interface.
+Energetic, engineered and optimistic. The site should feel like a living momentum system in a bright strategy room, not a dark dashboard or a colorful agency template. The committed mineral-blue palette carries the brand while solar yellow and motion orange mark action.
 
 ## Palette
 
-- Carbon: `oklch(15% 0.008 80)`
-- Warm paper: `oklch(96% 0.012 85)`
-- Signal orange: `oklch(66% 0.22 35)`
-- Active lime: `oklch(88% 0.17 112)`
+- Deep mineral: `oklch(32% 0.11 265)`
+- Motion blue: `oklch(49% 0.19 265)`
+- Warm canvas: `oklch(97% 0.022 85)`
+- Motion orange: `oklch(72% 0.18 40)`
+- Solar yellow: `oklch(88% 0.16 95)`
 - All colors must retain accessible contrast at WCAG 2.2 AA.
 
 ## Typography
