@@ -1,5 +1,5 @@
 // ============================================================
-//  O.T Performance — Language toggle (HE / EN)
+//  Wave Zero — Language toggle (HE / EN)
 //  Generic engine. HTML is authored in Hebrew; English lives in
 //  data-en attributes. Setting persists across pages.
 //  Include on every page AFTER content:
