@@ -19,9 +19,9 @@
 
     document.querySelectorAll('[data-en]').forEach(function (el) {
       if (el.getAttribute('data-he') === null) {
-        el.setAttribute('data-he', el.textContent);
+        el.setAttribute('data-he', el.innerHTML);
       }
-      el.textContent = en ? el.getAttribute('data-en') : el.getAttribute('data-he');
+      el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-he');
     });
 
     document.querySelectorAll('.lang-opt').forEach(function (b) {
