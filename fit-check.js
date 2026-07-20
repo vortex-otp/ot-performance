@@ -246,9 +246,107 @@
       if (fit.lastFocus && fit.lastFocus.focus) fit.lastFocus.focus();
     }
 
-    // Placeholder — replaced by the real wizard in Task 5.
     function renderStep() {
-      bodyEl.innerHTML = '<p class="fitc-q">…</p>';
+      if (fit.step >= 5) { renderResult(); return; }
+      renderQuestion(fit.step);
+    }
+
+    function renderQuestion(i) {
+      var c = COPY[lang()];
+      var qData = c.q[i];
+      var chosen = fit.answers['q' + (i + 1)];
+      var html = '<p class="fitc-progress">' + c.progress + ' ' + (i + 1) + ' ' + c.of + ' 5</p>' +
+        '<p class="fitc-q" id="fitc-qtext">' + qData.q + '</p>' +
+        '<div class="fitc-opts" role="radiogroup" aria-labelledby="fitc-qtext">';
+      qData.a.forEach(function (opt, idx) {
+        var sel = opt.v === chosen;
+        html += '<label class="fitc-opt' + (sel ? ' sel' : '') + '">' +
+          '<input type="radio" name="fitc-q' + (i + 1) + '" value="' + opt.v + '"' +
+          (sel ? ' checked' : '') + '>' +
+          '<span>' + opt.label + '</span></label>';
+      });
+      html += '</div><div class="fitc-nav">' +
+        (i > 0 ? '<button type="button" class="button fitc-back">' + c.back + '</button>' : '<span></span>') +
+        '<button type="button" class="button button-primary fitc-next"' +
+        (chosen ? '' : ' disabled') + '>' + c.next + '</button></div>';
+      bodyEl.innerHTML = html;
+
+      Array.prototype.forEach.call(bodyEl.querySelectorAll('input[type="radio"]'), function (r) {
+        r.addEventListener('change', function () { selectAnswer(i, r.value); });
+      });
+      var backBtn = bodyEl.querySelector('.fitc-back');
+      if (backBtn) backBtn.addEventListener('click', goBack);
+      bodyEl.querySelector('.fitc-next').addEventListener('click', goNext);
+    }
+
+    function selectAnswer(i, value) {
+      fit.answers['q' + (i + 1)] = value;
+      Array.prototype.forEach.call(bodyEl.querySelectorAll('.fitc-opt'), function (l) {
+        var input = l.querySelector('input');
+        l.classList.toggle('sel', input.value === value);
+      });
+      bodyEl.querySelector('.fitc-next').disabled = false;
+    }
+
+    function goNext() {
+      if (!fit.answers['q' + (fit.step + 1)]) return;
+      if (fit.step < 4) { fit.step += 1; renderStep(); }
+      else { fit.step = 5; fit.verdict = score(fit.answers); renderResult(); }
+    }
+
+    function goBack() { if (fit.step > 0) { fit.step -= 1; renderStep(); } }
+
+    function renderResult() {
+      var c = COPY[lang()];
+      var v = fit.verdict;
+      // EVENT SEAM: fit_check_completed — attach Meta custom event here (property: verdict = v).
+      if (v === 'notyet') { renderNotYet(c); return; }
+
+      var block = c.verdict[v];
+      var html = '<div class="fitc-result"><h3>' + block.title + '</h3>';
+      if (v === 'strong') {
+        html += '<p>' + block.body + '</p>' +
+          '<p class="fitc-start">' + block.starts[fit.answers.q4] + '</p>';
+      } else {
+        html += '<p>' + block.gap[partialGap(fit.answers)] + '</p>';
+      }
+      var numberSet = WHATSAPP_NUMBER !== '';
+      html += '<label class="fitc-field"><span>' + c.nameLabel + '</span>' +
+        '<input type="text" class="fitc-name" autocomplete="name"></label>' +
+        '<label class="fitc-field"><span>' + c.businessLabel + '</span>' +
+        '<input type="text" class="fitc-biz" autocomplete="organization"></label>' +
+        '<p class="fitc-err" role="alert"></p>' +
+        '<button type="button" class="button button-primary fitc-cta"' +
+        (numberSet ? '' : ' disabled') + '>' +
+        (numberSet ? c.cta : c.comingSoon) + '</button></div>';
+      bodyEl.innerHTML = html;
+      if (numberSet) bodyEl.querySelector('.fitc-cta').addEventListener('click', submitWhatsApp);
+    }
+
+    function renderNotYet(c) {
+      var block = c.verdict.notyet;
+      bodyEl.innerHTML = '<div class="fitc-result"><h3>' + block.title + '</h3>' +
+        '<p>' + block.reason[notyetReason(fit.answers)] + '</p>' +
+        '<p>' + block.closeLine + '</p>' +
+        '<button type="button" class="fitc-secondary fitc-tosystem">' + block.backToSystem + '</button></div>';
+      bodyEl.querySelector('.fitc-tosystem').addEventListener('click', function () {
+        closeModal();
+        var sys = document.getElementById('system');
+        if (sys) setTimeout(function () { sys.scrollIntoView(); }, 260);
+      });
+    }
+
+    function submitWhatsApp() {
+      var c = COPY[lang()];
+      var name = (bodyEl.querySelector('.fitc-name').value || '').trim();
+      var business = (bodyEl.querySelector('.fitc-biz').value || '').trim();
+      var err = bodyEl.querySelector('.fitc-err');
+      if (!name) { err.textContent = c.nameRequired; bodyEl.querySelector('.fitc-name').focus(); return; }
+      err.textContent = '';
+      fit.name = name; fit.business = business;
+      // EVENT SEAM: Lead / Contact — attach Meta pixel + CAPI here when pixel lands.
+      var msg = buildMessage(lang(), fit.answers, name, business);
+      window.location.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
     }
 
     function handleHash() { if (location.hash === '#fit-check') openModal(); }
@@ -258,6 +356,11 @@
       if (t) { e.preventDefault(); openModal(); }
     });
     window.addEventListener('hashchange', handleHash);
+    window.addEventListener('firstmotion:language', function () {
+      if (!fit.open) return;
+      syncChrome();
+      renderStep();
+    });
 
     if (document.readyState === 'loading') {
       document.addEventListener('DOMContentLoaded', function () { buildModal(); handleHash(); });
