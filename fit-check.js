@@ -213,6 +213,11 @@
       f = Array.prototype.filter.call(f, function (el) { return !el.disabled && el.offsetParent !== null; });
       if (!f.length) return;
       var first = f[0], last = f[f.length - 1];
+      if (Array.prototype.indexOf.call(f, document.activeElement) === -1) {
+        e.preventDefault();
+        (e.shiftKey ? last : first).focus();
+        return;
+      }
       if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
       else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
     }
@@ -256,7 +261,7 @@
       var qData = c.q[i];
       var chosen = fit.answers['q' + (i + 1)];
       var html = '<p class="fitc-progress">' + c.progress + ' ' + (i + 1) + ' ' + c.of + ' 5</p>' +
-        '<p class="fitc-q" id="fitc-qtext">' + qData.q + '</p>' +
+        '<p class="fitc-q" id="fitc-qtext" tabindex="-1">' + qData.q + '</p>' +
         '<div class="fitc-opts" role="radiogroup" aria-labelledby="fitc-qtext">';
       qData.a.forEach(function (opt, idx) {
         var sel = opt.v === chosen;
@@ -277,6 +282,9 @@
       var backBtn = bodyEl.querySelector('.fitc-back');
       if (backBtn) backBtn.addEventListener('click', goBack);
       bodyEl.querySelector('.fitc-next').addEventListener('click', goNext);
+
+      var fh = bodyEl.querySelector('#fitc-qtext');
+      if (fh) fh.focus({ preventScroll: true });
     }
 
     function selectAnswer(i, value) {
@@ -303,7 +311,7 @@
       if (v === 'notyet') { renderNotYet(c); return; }
 
       var block = c.verdict[v];
-      var html = '<div class="fitc-result"><h3>' + block.title + '</h3>';
+      var html = '<div class="fitc-result"><h3 tabindex="-1">' + block.title + '</h3>';
       if (v === 'strong') {
         html += '<p>' + block.body + '</p>' +
           '<p class="fitc-start">' + block.starts[fit.answers.q4] + '</p>';
@@ -321,11 +329,14 @@
         (numberSet ? c.cta : c.comingSoon) + '</button></div>';
       bodyEl.innerHTML = html;
       if (numberSet) bodyEl.querySelector('.fitc-cta').addEventListener('click', submitWhatsApp);
+
+      var rh = bodyEl.querySelector('h3');
+      if (rh) rh.focus({ preventScroll: true });
     }
 
     function renderNotYet(c) {
       var block = c.verdict.notyet;
-      bodyEl.innerHTML = '<div class="fitc-result"><h3>' + block.title + '</h3>' +
+      bodyEl.innerHTML = '<div class="fitc-result"><h3 tabindex="-1">' + block.title + '</h3>' +
         '<p>' + block.reason[notyetReason(fit.answers)] + '</p>' +
         '<p>' + block.closeLine + '</p>' +
         '<button type="button" class="fitc-secondary fitc-tosystem">' + block.backToSystem + '</button></div>';
@@ -334,6 +345,9 @@
         var sys = document.getElementById('system');
         if (sys) setTimeout(function () { sys.scrollIntoView(); }, 260);
       });
+
+      var nh = bodyEl.querySelector('h3');
+      if (nh) nh.focus({ preventScroll: true });
     }
 
     function submitWhatsApp() {
