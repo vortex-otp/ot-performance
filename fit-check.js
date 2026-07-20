@@ -228,9 +228,11 @@
       prevOverflow = document.body.style.overflow;
       document.body.style.overflow = 'hidden';
       overlay.hidden = false;
-      requestAnimationFrame(function () { overlay.classList.add('open'); });
-      var focusables = modal.querySelectorAll('button:not(.fitc-close), [href], input');
-      (focusables[0] || modal.querySelector('.fitc-close')).focus();
+      requestAnimationFrame(function () {
+        overlay.classList.add('open');
+        var focusables = modal.querySelectorAll('button:not(.fitc-close), [href], input');
+        (focusables[0] || modal.querySelector('.fitc-close')).focus();
+      });
     }
 
     function closeModal() {
