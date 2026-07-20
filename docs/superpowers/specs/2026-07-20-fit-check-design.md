@@ -117,7 +117,7 @@ Full copy. Each answer carries a weight or a personalization tag.
 | `עדיין לא באמת` / Not really yet | **GATE → Not yet** |
 
 ### Q4 — Biggest constraint  *(maps to the 4 system layers — personalization, NOT scored)*
-- HE: `איפה הכי כואב לך היום?` · EN: `Where does it hurt most today?`
+- HE: `מה הכי מפריע לך היום?` · EN: `Where does it hurt most today?`
 
 | Answer | Layer tag |
 |---|---|
@@ -169,7 +169,7 @@ Notes:
   - generic — `נתחיל במיפוי מהיר כדי לזהות את צוואר הבקבוק המרכזי.`
   - (EN mirrors each.)
 - Capture: `name` (required) + `business/site` (optional).
-- CTA — HE: `שלחו את התוצאה בוואטסאפ` · EN: `Send this to us on WhatsApp`.
+- CTA — HE: `שלחו את התוצאה בוואטסאפ` · EN: `Let's talk on WhatsApp`.
 
 ### ② Partial fit
 - Title — HE: `יש בסיס טוב, עם דבר אחד לחדד` · EN: `Solid basis, one thing to shore up first`.
