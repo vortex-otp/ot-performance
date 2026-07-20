@@ -230,6 +230,9 @@
       overlay.hidden = false;
       requestAnimationFrame(function () {
         overlay.classList.add('open');
+        // force style/layout flush so the visibility:hidden→visible change is committed
+        // before focusing — otherwise .focus() runs on a not-yet-focusable element and no-ops
+        void overlay.offsetWidth;
         var focusables = modal.querySelectorAll('button:not(.fitc-close), [href], input');
         (focusables[0] || modal.querySelector('.fitc-close')).focus();
       });
