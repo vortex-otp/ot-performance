@@ -146,7 +146,30 @@
     return 'q2';
   }
 
+  function labelFor(c, qIndex, value) {
+    var opts = c.q[qIndex].a;
+    for (var i = 0; i < opts.length; i++) if (opts[i].v === value) return opts[i].label;
+    return value;
+  }
+
+  function buildMessage(lang, a, name, business) {
+    var c = COPY[lang === 'en' ? 'en' : 'he'];
+    var w = c.wa;
+    var vLabel = w.verdictLabel[score(a)] || '';
+    var lines = [
+      w.greeting,
+      w.resultPrefix + vLabel + '.',
+      '• ' + w.labels.q1 + ': ' + labelFor(c, 0, a.q1),
+      '• ' + w.labels.q2 + ': ' + labelFor(c, 1, a.q2),
+      '• ' + w.labels.q3 + ': ' + labelFor(c, 2, a.q3),
+      '• ' + w.labels.q4 + ': ' + labelFor(c, 3, a.q4),
+      w.nameLine + name + (business ? '\n' + w.businessLine + business : ''),
+      w.closing
+    ];
+    return lines.join('\n');
+  }
+
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { score: score, partialGap: partialGap, notyetReason: notyetReason, COPY: COPY };
+    module.exports = { score: score, partialGap: partialGap, notyetReason: notyetReason, buildMessage: buildMessage, COPY: COPY };
   }
 })();
