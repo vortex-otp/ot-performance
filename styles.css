@@ -720,10 +720,11 @@ img, svg { display: block; max-width: 100%; }
 /* Compatibility check modal */
 .fitc-overlay {
   position: fixed; inset: 0; z-index: 200;
-  display: grid; place-items: center; padding: 20px;
+  place-items: center; padding: 20px;
   background: oklch(19% 0.075 320 / 55%);
   opacity: 0; pointer-events: none; transition: opacity .2s ease;
 }
+.fitc-overlay:not([hidden]) { display: grid; }
 .fitc-overlay.open { opacity: 1; pointer-events: auto; }
 .fitc-modal {
   width: min(560px, 100%); max-height: 90vh; overflow-y: auto;
