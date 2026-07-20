@@ -19,48 +19,24 @@
           { v: 'notreally', label: 'עדיין לא באמת' } ] },
         { q: 'מה הכי מפריע לך היום?', a: [
           { v: 'operate', label: 'איכות ומהירות הלידים' }, { v: 'convert', label: 'הפיכת תנועה לפעולה' },
-          { v: 'learn', label: 'אי אפשר למדוד מה עובד' }, { v: 'unsure', label: 'לא בטוח/ה' } ] },
-        { q: 'מה הכי מדויק לגביך?', a: [
-          { v: 'ready', label: 'מוכן/ה למדוד בכנות ולתקן תשתיות' }, { v: 'open', label: 'פתוח/ה לזה' },
-          { v: 'trafficonly', label: 'בעיקר רוצה יותר תנועה' } ] }
+          { v: 'learn', label: 'אי אפשר למדוד מה עובד' }, { v: 'unsure', label: 'לא בטוח/ה' } ] }
       ],
-      verdict: {
-        strong: {
-          title: 'יש כאן התאמה חזקה',
-          body: 'עסק פעיל, הצעה מוכחת ונכונות למדוד — זה בדיוק מה ש-First Motion מחברת.',
-          starts: {
-            operate: 'נראה שהחסם המרכזי הוא בטיפול בלידים — נתחיל משכבת OPERATE: מהירות תגובה, סינון וניתוב.',
-            convert: 'נראה שהחסם המרכזי הוא בהמרה — נתחיל משכבת CONVERT: העמוד, ההצעה והצעד הבא.',
-            learn: 'נראה שהחסם המרכזי הוא מדידה — נתחיל משכבת LEARN: טראקינג, ייחוס והחלטות מדאטה.',
-            unsure: 'נתחיל במיפוי מהיר כדי לזהות את צוואר הבקבוק המרכזי.'
-          }
-        },
-        partial: {
-          title: 'יש בסיס טוב, עם דבר אחד לחדד',
-          gap: {
-            q3: 'הכיוון נכון. לפני שמאיצים, כדאי לבסס עוד את ההצעה בשוק.',
-            q2: 'הכיוון נכון. הפעילות עדיין צעירה — נבנה אותה נכון מההתחלה.',
-            q5: 'הכיוון נכון. ההצלחה תלויה בנכונות למדוד ולתקן, לא רק להריץ תנועה.',
-            q1: 'סוג העסק קצת מחוץ למוקד הקלאסי שלנו, אבל יש על מה לדבר.'
-          }
-        },
-        notyet: {
-          title: 'כנראה שעדיין מוקדם — וזה בסדר',
-          reason: {
-            q3: 'לפני שמשקיעים במדיה, שווה שההצעה תוכיח את עצמה בשוק.',
-            q2: 'לפני שכדאי לדבר, שווה שתהיה פעילות שיווקית ראשונית שאפשר למדוד.',
-            q5: 'אנחנו לא עוסקים רק בהבאת תנועה. כשחשוב לך גם מה קורה עם התנועה — נדבר.'
-          },
-          closeLine: 'כשזה קיים, נשמח שתחזרו.', backToSystem: 'חזרה למערכת'
+      result: {
+        title: 'יש כאן התאמה',
+        body: 'נשמע שיש בסיס טוב להתחיל ממנו. הנה מאיפה היינו מתחילים איתכם:',
+        starts: {
+          operate: 'נראה שהחסם המרכזי הוא בטיפול בלידים — נתחיל משכבת OPERATE: מהירות תגובה, סינון וניתוב.',
+          convert: 'נראה שהחסם המרכזי הוא בהמרה — נתחיל משכבת CONVERT: העמוד, ההצעה והצעד הבא.',
+          learn: 'נראה שהחסם המרכזי הוא מדידה — נתחיל משכבת LEARN: טראקינג, ייחוס והחלטות מדאטה.',
+          unsure: 'נתחיל במיפוי מהיר כדי לזהות את צוואר הבקבוק המרכזי.'
         }
       },
-      cta: 'שלחו את התוצאה בוואטסאפ', comingSoon: 'בקרוב',
+      cta: 'שלחו את הפרטים בוואטסאפ', comingSoon: 'בקרוב',
       nameLabel: 'שם', nameRequired: 'נא למלא שם', businessLabel: 'אתר / עסק (רשות)',
       wa: {
-        greeting: 'היי First Motion 👋', resultPrefix: 'עשיתי את בדיקת ההתאמה — התוצאה: ',
+        greeting: 'היי First Motion 👋', intro: 'עשיתי את בדיקת ההתאמה, הנה מה שעניתי:',
         labels: { q1: 'סוג עסק', q2: 'שיווק פעיל', q3: 'הצעה מוכחת', q4: 'החסם המרכזי' },
-        nameLine: 'השם שלי: ', businessLine: '• עסק/אתר: ', closing: 'אשמח לדבר.',
-        verdictLabel: { strong: 'התאמה חזקה', partial: 'התאמה חלקית' }
+        nameLine: 'השם שלי: ', businessLine: '• עסק/אתר: ', closing: 'אשמח לדבר.'
       }
     },
     en: {
@@ -78,73 +54,27 @@
           { v: 'notreally', label: 'Not really yet' } ] },
         { q: 'Where does it hurt most today?', a: [
           { v: 'operate', label: 'Lead quality & speed' }, { v: 'convert', label: 'Turning traffic into action' },
-          { v: 'learn', label: 'Can\'t measure what works' }, { v: 'unsure', label: 'Not sure' } ] },
-        { q: 'Which is most true for you?', a: [
-          { v: 'ready', label: 'Ready to measure honestly & fix infrastructure' }, { v: 'open', label: 'Open to it' },
-          { v: 'trafficonly', label: 'Mainly just want more traffic' } ] }
+          { v: 'learn', label: 'Can\'t measure what works' }, { v: 'unsure', label: 'Not sure' } ] }
       ],
-      verdict: {
-        strong: {
-          title: 'Strong fit',
-          body: 'An active business, a proven offer and the will to measure — exactly what First Motion connects.',
-          starts: {
-            operate: 'Your main constraint looks like lead handling — we\'d start with the OPERATE layer: response speed, qualification and routing.',
-            convert: 'Your main constraint looks like conversion — we\'d start with the CONVERT layer: the page, the offer and the next step.',
-            learn: 'Your main constraint looks like measurement — we\'d start with the LEARN layer: tracking, attribution and data-driven decisions.',
-            unsure: 'We\'d start with a quick mapping to find the main bottleneck.'
-          }
-        },
-        partial: {
-          title: 'Solid basis, one thing to shore up first',
-          gap: {
-            q3: 'The direction is right. Before accelerating, it\'s worth proving the offer further in the market.',
-            q2: 'The direction is right. The activity is still young — we\'d build it right from the start.',
-            q5: 'The direction is right. Success depends on the will to measure and fix, not just to run traffic.',
-            q1: 'Your business type is a little outside our classic focus, but there\'s a basis to talk.'
-          }
-        },
-        notyet: {
-          title: 'Probably too early — and that\'s OK',
-          reason: {
-            q3: 'Before investing in media, it\'s worth letting the offer prove itself in the market.',
-            q2: 'Before it\'s worth talking, it helps to have some initial marketing activity to measure.',
-            q5: 'We don\'t just drive traffic. When what happens to that traffic matters to you too — let\'s talk.'
-          },
-          closeLine: 'When that\'s in place, we\'d be glad to talk.', backToSystem: 'Back to the system'
+      result: {
+        title: 'Looks like a fit',
+        body: 'Sounds like a solid basis to build on. Here\'s where we\'d start with you:',
+        starts: {
+          operate: 'Your main constraint looks like lead handling — we\'d start with the OPERATE layer: response speed, qualification and routing.',
+          convert: 'Your main constraint looks like conversion — we\'d start with the CONVERT layer: the page, the offer and the next step.',
+          learn: 'Your main constraint looks like measurement — we\'d start with the LEARN layer: tracking, attribution and data-driven decisions.',
+          unsure: 'We\'d start with a quick mapping to find the main bottleneck.'
         }
       },
-      cta: 'Let\'s talk on WhatsApp', comingSoon: 'Coming soon',
+      cta: 'Send the details on WhatsApp', comingSoon: 'Coming soon',
       nameLabel: 'Name', nameRequired: 'Please enter a name', businessLabel: 'Site / business (optional)',
       wa: {
-        greeting: 'Hi First Motion 👋', resultPrefix: 'I took the compatibility check — result: ',
+        greeting: 'Hi First Motion 👋', intro: 'I took the compatibility check, here\'s what I answered:',
         labels: { q1: 'Business type', q2: 'Active marketing', q3: 'Proven offer', q4: 'Main constraint' },
-        nameLine: 'My name: ', businessLine: '• Business/site: ', closing: 'Happy to talk.',
-        verdictLabel: { strong: 'Strong fit', partial: 'Partial fit' }
+        nameLine: 'My name: ', businessLine: '• Business/site: ', closing: 'Happy to talk.'
       }
     }
   };
-
-  function score(a) {
-    if (a.q2 === 'nothing' || a.q3 === 'notreally' || a.q5 === 'trafficonly') return 'notyet';
-    if (a.q2 === 'consistent' && a.q3 === 'steadily' && a.q5 === 'ready' &&
-        (a.q1 === 'lead' || a.q1 === 'ecom' || a.q1 === 'b2b')) return 'strong';
-    return 'partial';
-  }
-
-  function partialGap(a) {
-    if (a.q3 === 'earlysales') return 'q3';
-    if (a.q2 === 'starting') return 'q2';
-    if (a.q5 === 'open') return 'q5';
-    if (a.q1 === 'other') return 'q1';
-    return 'q3';
-  }
-
-  function notyetReason(a) {
-    if (a.q3 === 'notreally') return 'q3';
-    if (a.q2 === 'nothing') return 'q2';
-    if (a.q5 === 'trafficonly') return 'q5';
-    return 'q2';
-  }
 
   function labelFor(c, qIndex, value) {
     var opts = c.q[qIndex].a;
@@ -155,10 +85,9 @@
   function buildMessage(lang, a, name, business) {
     var c = COPY[lang === 'en' ? 'en' : 'he'];
     var w = c.wa;
-    var vLabel = w.verdictLabel[score(a)] || '';
     var lines = [
       w.greeting,
-      w.resultPrefix + vLabel + '.',
+      w.intro,
       '• ' + w.labels.q1 + ': ' + labelFor(c, 0, a.q1),
       '• ' + w.labels.q2 + ': ' + labelFor(c, 1, a.q2),
       '• ' + w.labels.q3 + ': ' + labelFor(c, 2, a.q3),
@@ -170,7 +99,7 @@
   }
 
   if (typeof document !== 'undefined') {
-    var fit = { open: false, step: 0, answers: {}, verdict: null, name: '', business: '', lastFocus: null };
+    var fit = { open: false, step: 0, answers: {}, name: '', business: '', lastFocus: null };
     var overlay, modal, bodyEl, prevOverflow = '';
 
     function lang() { return document.documentElement.lang === 'en' ? 'en' : 'he'; }
@@ -225,7 +154,7 @@
     function openModal() {
       buildModal();
       // EVENT SEAM: fit_check_started — attach Meta pixel custom event here when pixel lands.
-      fit.open = true; fit.step = 0; fit.answers = {}; fit.verdict = null;
+      fit.open = true; fit.step = 0; fit.answers = {};
       fit.name = ''; fit.business = '';
       fit.lastFocus = document.activeElement;
       syncChrome();
@@ -252,7 +181,7 @@
     }
 
     function renderStep() {
-      if (fit.step >= 5) { renderResult(); return; }
+      if (fit.step >= COPY[lang()].q.length) { renderResult(); return; }
       renderQuestion(fit.step);
     }
 
@@ -260,10 +189,10 @@
       var c = COPY[lang()];
       var qData = c.q[i];
       var chosen = fit.answers['q' + (i + 1)];
-      var html = '<p class="fitc-progress">' + c.progress + ' ' + (i + 1) + ' ' + c.of + ' 5</p>' +
+      var html = '<p class="fitc-progress">' + c.progress + ' ' + (i + 1) + ' ' + c.of + ' ' + c.q.length + '</p>' +
         '<p class="fitc-q" id="fitc-qtext" tabindex="-1">' + qData.q + '</p>' +
         '<div class="fitc-opts" role="radiogroup" aria-labelledby="fitc-qtext">';
-      qData.a.forEach(function (opt, idx) {
+      qData.a.forEach(function (opt) {
         var sel = opt.v === chosen;
         html += '<label class="fitc-opt' + (sel ? ' sel' : '') + '">' +
           '<input type="radio" name="fitc-q' + (i + 1) + '" value="' + opt.v + '"' +
@@ -298,28 +227,23 @@
 
     function goNext() {
       if (!fit.answers['q' + (fit.step + 1)]) return;
-      if (fit.step < 4) { fit.step += 1; renderStep(); }
-      else { fit.step = 5; fit.verdict = score(fit.answers); renderResult(); }
+      var last = COPY[lang()].q.length - 1;
+      if (fit.step < last) { fit.step += 1; renderStep(); }
+      else { fit.step = last + 1; renderResult(); }
     }
 
     function goBack() { if (fit.step > 0) { fit.step -= 1; renderStep(); } }
 
     function renderResult() {
       var c = COPY[lang()];
-      var v = fit.verdict;
-      // EVENT SEAM: fit_check_completed — attach Meta custom event here (property: verdict = v).
-      if (v === 'notyet') { renderNotYet(c); return; }
-
-      var block = c.verdict[v];
-      var html = '<div class="fitc-result"><h3 tabindex="-1">' + block.title + '</h3>';
-      if (v === 'strong') {
-        html += '<p>' + block.body + '</p>' +
-          '<p class="fitc-start">' + block.starts[fit.answers.q4] + '</p>';
-      } else {
-        html += '<p>' + block.gap[partialGap(fit.answers)] + '</p>';
-      }
+      var block = c.result;
+      // EVENT SEAM: fit_check_completed — attach Meta custom event here when pixel lands.
+      var start = block.starts[fit.answers.q4] || block.starts.unsure;
       var numberSet = WHATSAPP_NUMBER !== '';
-      html += '<label class="fitc-field"><span>' + c.nameLabel + '</span>' +
+      var html = '<div class="fitc-result"><h3 tabindex="-1">' + block.title + '</h3>' +
+        '<p>' + block.body + '</p>' +
+        '<p class="fitc-start">' + start + '</p>' +
+        '<label class="fitc-field"><span>' + c.nameLabel + '</span>' +
         '<input type="text" class="fitc-name" autocomplete="name"></label>' +
         '<label class="fitc-field"><span>' + c.businessLabel + '</span>' +
         '<input type="text" class="fitc-biz" autocomplete="organization"></label>' +
@@ -332,22 +256,6 @@
 
       var rh = bodyEl.querySelector('h3');
       if (rh) rh.focus({ preventScroll: true });
-    }
-
-    function renderNotYet(c) {
-      var block = c.verdict.notyet;
-      bodyEl.innerHTML = '<div class="fitc-result"><h3 tabindex="-1">' + block.title + '</h3>' +
-        '<p>' + block.reason[notyetReason(fit.answers)] + '</p>' +
-        '<p>' + block.closeLine + '</p>' +
-        '<button type="button" class="fitc-secondary fitc-tosystem">' + block.backToSystem + '</button></div>';
-      bodyEl.querySelector('.fitc-tosystem').addEventListener('click', function () {
-        closeModal();
-        var sys = document.getElementById('system');
-        if (sys) setTimeout(function () { sys.scrollIntoView(); }, 260);
-      });
-
-      var nh = bodyEl.querySelector('h3');
-      if (nh) nh.focus({ preventScroll: true });
     }
 
     function submitWhatsApp() {
@@ -382,6 +290,6 @@
   }
 
   if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { score: score, partialGap: partialGap, notyetReason: notyetReason, buildMessage: buildMessage, COPY: COPY };
+    module.exports = { buildMessage: buildMessage, COPY: COPY };
   }
 })();

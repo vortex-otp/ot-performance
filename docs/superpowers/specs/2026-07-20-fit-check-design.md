@@ -6,6 +6,31 @@
 
 ---
 
+## Revision 2 (2026-07-20, post-preview review)
+
+Two owner-requested changes supersede parts of the original design below:
+
+1. **Q5 removed.** The "key condition" question (`מה הכי מדויק לגביך?`) was cut as
+   unnecessary and confusing. The wizard is now **4 questions** (Q1–Q4). §4's Q5
+   and all `q5`/`ready`/`open`/`trafficonly` references are void.
+2. **Result is always positive.** The three-way verdict (strong / partial /
+   not-yet) is removed. Every completion shows **one encouraging result**, still
+   **personalized by Q4** ("where we'd start"), followed by name capture + the
+   WhatsApp CTA. This voids the gates/scoring in §5, the partial/not-yet screens
+   in §6, and the not-yet "gives nothing" behavior. The 4 answers are still sent
+   to WhatsApp so First Motion can triage manually.
+
+Consequent code changes: `score`/`partialGap`/`notyetReason`/`renderNotYet`
+removed; `COPY.verdict` → a single `COPY.result` (title/body/starts); the
+WhatsApp message drops the verdict line (`wa.resultPrefix`/`verdictLabel` →
+`wa.intro`). Owner accepted the trade-off (less honest filtering, more inbound
+volume, weaker future Meta `Lead` signal) knowingly.
+
+Sections 4–7 below describe the original three-way design and are kept for
+history; where they conflict with this revision, this revision governs.
+
+---
+
 ## 1. Problem
 
 The header CTA **בדיקת התאמה** ("Check fit") is the highest-intent action on the
