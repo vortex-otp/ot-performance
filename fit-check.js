@@ -169,6 +169,100 @@
     return lines.join('\n');
   }
 
+  if (typeof document !== 'undefined') {
+    var fit = { open: false, step: 0, answers: {}, verdict: null, name: '', business: '', lastFocus: null };
+    var overlay, modal, bodyEl, prevOverflow = '';
+
+    function lang() { return document.documentElement.lang === 'en' ? 'en' : 'he'; }
+
+    function buildModal() {
+      if (overlay) return;
+      overlay = document.createElement('div');
+      overlay.className = 'fitc-overlay';
+      overlay.hidden = true;
+      modal = document.createElement('div');
+      modal.className = 'fitc-modal';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-modal', 'true');
+      modal.setAttribute('aria-labelledby', 'fitc-title');
+      modal.innerHTML =
+        '<div class="fitc-head"><h2 id="fitc-title"></h2>' +
+        '<button type="button" class="fitc-close" aria-label=""></button></div>' +
+        '<div class="fitc-body"></div>';
+      overlay.appendChild(modal);
+      document.body.appendChild(overlay);
+      bodyEl = modal.querySelector('.fitc-body');
+
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+      modal.querySelector('.fitc-close').addEventListener('click', closeModal);
+      document.addEventListener('keydown', function (e) {
+        if (!fit.open) return;
+        if (e.key === 'Escape') { closeModal(); return; }
+        if (e.key === 'Tab') trapFocus(e);
+      });
+    }
+
+    function syncChrome() {
+      var c = COPY[lang()];
+      modal.querySelector('#fitc-title').textContent = c.dialogTitle;
+      modal.querySelector('.fitc-close').setAttribute('aria-label', c.close);
+    }
+
+    function trapFocus(e) {
+      var f = modal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      f = Array.prototype.filter.call(f, function (el) { return !el.disabled && el.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+
+    function openModal() {
+      buildModal();
+      // EVENT SEAM: fit_check_started — attach Meta pixel custom event here when pixel lands.
+      fit.open = true; fit.step = 0; fit.answers = {}; fit.verdict = null;
+      fit.name = ''; fit.business = '';
+      fit.lastFocus = document.activeElement;
+      syncChrome();
+      renderStep();
+      prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      overlay.hidden = false;
+      requestAnimationFrame(function () { overlay.classList.add('open'); });
+      var focusables = modal.querySelectorAll('button:not(.fitc-close), [href], input');
+      (focusables[0] || modal.querySelector('.fitc-close')).focus();
+    }
+
+    function closeModal() {
+      if (!overlay) return;
+      fit.open = false;
+      overlay.classList.remove('open');
+      document.body.style.overflow = prevOverflow;
+      if (location.hash === '#fit-check') {
+        history.replaceState(null, '', location.pathname + location.search);
+      }
+      setTimeout(function () { overlay.hidden = true; }, 220);
+      if (fit.lastFocus && fit.lastFocus.focus) fit.lastFocus.focus();
+    }
+
+    // Placeholder — replaced by the real wizard in Task 5.
+    function renderStep() {
+      bodyEl.innerHTML = '<p class="fitc-q">…</p>';
+    }
+
+    function handleHash() { if (location.hash === '#fit-check') openModal(); }
+
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest ? e.target.closest('a[href="#fit-check"]') : null;
+      if (t) { e.preventDefault(); openModal(); }
+    });
+    window.addEventListener('hashchange', handleHash);
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function () { buildModal(); handleHash(); });
+    } else { buildModal(); handleHash(); }
+  }
+
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = { score: score, partialGap: partialGap, notyetReason: notyetReason, buildMessage: buildMessage, COPY: COPY };
   }
