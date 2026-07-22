@@ -257,4 +257,12 @@
   document.querySelectorAll('.yr').forEach(function (element) {
     element.textContent = new Date().getFullYear();
   });
+
+  // Track contact clicks as leads
+  document.addEventListener('click', function (event) {
+    var method = event.target.closest ? event.target.closest('.contact-method') : null;
+    if (!method || !window.vtx) return;
+    var channel = (method.className.match(/contact-(email|phone|whatsapp)/) || [])[1] || 'other';
+    window.vtx('track', 'contact_click', { channel: channel });
+  });
 })();
