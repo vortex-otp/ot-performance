@@ -1,7 +1,10 @@
 (function () {
   'use strict';
 
-  var WHATSAPP_NUMBER = ''; // set to international digits-only to go live, e.g. '972501234567'
+  // ── Go-live config: fill these to activate. Empty = inert (no broken links). ──
+  var WHATSAPP_NUMBER = ''; // international digits-only, e.g. '972501234567' — powers the fit-check handoff AND the WhatsApp contact button
+  var CONTACT_EMAIL = '';   // main email, e.g. 'hello@firstmotion.co.il' — shows the Email contact button when set
+  var CONTACT_PHONE = '';   // international phone, e.g. '+972501234567' — shows the Phone contact button when set
 
   var COPY = {
     he: {
@@ -273,6 +276,27 @@
 
     function handleHash() { if (location.hash === '#fit-check') openModal(); }
 
+    // Wire the contact buttons from the go-live config. Buttons stay visible always;
+    // an unset one is inert (aria-disabled, no href) so no broken link ships.
+    function wireContact() {
+      var wrap = document.querySelector('.contact-methods');
+      if (!wrap) return;
+      var live = 0;
+      function apply(sel, href) {
+        var b = wrap.querySelector(sel);
+        if (!b) return;
+        if (href) { b.href = href; b.removeAttribute('aria-disabled'); live++; }
+        else { b.removeAttribute('href'); b.setAttribute('aria-disabled', 'true'); }
+      }
+      apply('.contact-email', CONTACT_EMAIL ? 'mailto:' + CONTACT_EMAIL : '');
+      apply('.contact-phone', CONTACT_PHONE ? 'tel:' + CONTACT_PHONE : '');
+      apply('.contact-whatsapp', WHATSAPP_NUMBER ? 'https://wa.me/' + WHATSAPP_NUMBER : '');
+      var status = document.querySelector('.contact-status');
+      if (status && live > 0) status.hidden = true;
+    }
+
+    function init() { buildModal(); handleHash(); wireContact(); }
+
     document.addEventListener('click', function (e) {
       var t = e.target.closest ? e.target.closest('a[href="#fit-check"]') : null;
       if (t) { e.preventDefault(); openModal(); }
@@ -285,8 +309,8 @@
     });
 
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', function () { buildModal(); handleHash(); });
-    } else { buildModal(); handleHash(); }
+      document.addEventListener('DOMContentLoaded', init);
+    } else { init(); }
   }
 
   if (typeof module !== 'undefined' && module.exports) {
