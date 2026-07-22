@@ -774,3 +774,7 @@ img, svg { display: block; max-width: 100%; }
 @media (prefers-reduced-motion: reduce) {
   .fitc-overlay, .fitc-modal { transition: none; }
 }
+
+/* Contact method buttons */
+.contact-methods { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.contact-methods .contact-method { text-decoration: none; }
