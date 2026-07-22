@@ -276,20 +276,23 @@
 
     function handleHash() { if (location.hash === '#fit-check') openModal(); }
 
-    // Populate the contact-section buttons from the go-live config; hide any that are unset.
+    // Wire the contact buttons from the go-live config. Buttons stay visible always;
+    // an unset one is inert (aria-disabled, no href) so no broken link ships.
     function wireContact() {
       var wrap = document.querySelector('.contact-methods');
       if (!wrap) return;
-      var shown = 0;
-      var email = wrap.querySelector('.contact-email');
-      if (email && CONTACT_EMAIL) { email.href = 'mailto:' + CONTACT_EMAIL; email.hidden = false; shown++; }
-      var phone = wrap.querySelector('.contact-phone');
-      if (phone && CONTACT_PHONE) { phone.href = 'tel:' + CONTACT_PHONE; phone.hidden = false; shown++; }
-      var wa = wrap.querySelector('.contact-whatsapp');
-      if (wa && WHATSAPP_NUMBER) { wa.href = 'https://wa.me/' + WHATSAPP_NUMBER; wa.hidden = false; shown++; }
-      wrap.hidden = shown === 0;
+      var live = 0;
+      function apply(sel, href) {
+        var b = wrap.querySelector(sel);
+        if (!b) return;
+        if (href) { b.href = href; b.removeAttribute('aria-disabled'); live++; }
+        else { b.removeAttribute('href'); b.setAttribute('aria-disabled', 'true'); }
+      }
+      apply('.contact-email', CONTACT_EMAIL ? 'mailto:' + CONTACT_EMAIL : '');
+      apply('.contact-phone', CONTACT_PHONE ? 'tel:' + CONTACT_PHONE : '');
+      apply('.contact-whatsapp', WHATSAPP_NUMBER ? 'https://wa.me/' + WHATSAPP_NUMBER : '');
       var status = document.querySelector('.contact-status');
-      if (status && shown > 0) status.hidden = true;
+      if (status && live > 0) status.hidden = true;
     }
 
     function init() { buildModal(); handleHash(); wireContact(); }
