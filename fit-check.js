@@ -2,9 +2,9 @@
   'use strict';
 
   // ── Go-live config: fill these to activate. Empty = inert (no broken links). ──
-  var WHATSAPP_NUMBER = ''; // international digits-only, e.g. '972501234567' — powers the fit-check handoff AND the WhatsApp contact button
-  var CONTACT_EMAIL = '';   // main email, e.g. 'hello@firstmotion.co.il' — shows the Email contact button when set
-  var CONTACT_PHONE = '';   // international phone, e.g. '+972501234567' — shows the Phone contact button when set
+  var WHATSAPP_NUMBER = '972504950377'; // international digits-only — powers the fit-check handoff AND the WhatsApp contact button
+  var CONTACT_EMAIL = 'Marketing@firstmotion.co'; // main email — shows the Email contact button when set
+  var FACEBOOK_URL = 'https://www.facebook.com/profile.php?id=61592606906080'; // page URL — shows the Facebook contact button when set
 
   var COPY = {
     he: {
@@ -289,7 +289,7 @@
         else { b.removeAttribute('href'); b.setAttribute('aria-disabled', 'true'); }
       }
       apply('.contact-email', CONTACT_EMAIL ? 'mailto:' + CONTACT_EMAIL : '');
-      apply('.contact-phone', CONTACT_PHONE ? 'tel:' + CONTACT_PHONE : '');
+      apply('.contact-facebook', FACEBOOK_URL);
       apply('.contact-whatsapp', WHATSAPP_NUMBER ? 'https://wa.me/' + WHATSAPP_NUMBER : '');
       var status = document.querySelector('.contact-status');
       if (status && live > 0) status.hidden = true;

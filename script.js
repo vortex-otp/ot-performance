@@ -262,7 +262,7 @@
   document.addEventListener('click', function (event) {
     var method = event.target.closest ? event.target.closest('.contact-method') : null;
     if (!method || !window.vtx) return;
-    var channel = (method.className.match(/contact-(email|phone|whatsapp)/) || [])[1] || 'other';
+    var channel = (method.className.match(/contact-(email|facebook|whatsapp)/) || [])[1] || 'other';
     window.vtx('track', 'contact_click', { channel: channel });
   });
 })();
