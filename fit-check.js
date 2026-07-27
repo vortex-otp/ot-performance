@@ -39,7 +39,9 @@
       wa: {
         greeting: 'היי First Motion 👋', intro: 'עשיתי את בדיקת ההתאמה, הנה מה שעניתי:',
         labels: { q1: 'סוג עסק', q2: 'שיווק פעיל', q3: 'הצעה מוכחת', q4: 'החסם המרכזי' },
-        nameLine: 'השם שלי: ', businessLine: '• עסק/אתר: ', closing: 'אשמח לדבר.'
+        nameLine: 'השם שלי: ', businessLine: '• עסק/אתר: ', closing: 'אשמח לדבר.',
+        // Pre-filled draft for the plain WhatsApp contact button — the visitor only has to press send.
+        contactGreeting: 'היי, הגעתי מהאתר ואשמח לקבל פרטים.'
       }
     },
     en: {
@@ -74,7 +76,9 @@
       wa: {
         greeting: 'Hi First Motion 👋', intro: 'I took the compatibility check, here\'s what I answered:',
         labels: { q1: 'Business type', q2: 'Active marketing', q3: 'Proven offer', q4: 'Main constraint' },
-        nameLine: 'My name: ', businessLine: '• Business/site: ', closing: 'Happy to talk.'
+        nameLine: 'My name: ', businessLine: '• Business/site: ', closing: 'Happy to talk.',
+        // Pre-filled draft for the plain WhatsApp contact button — the visitor only has to press send.
+        contactGreeting: 'Hi, I came from the website and would like to get some details.'
       }
     }
   };
@@ -281,18 +285,21 @@
     function wireContact() {
       var wrap = document.querySelector('.contact-methods');
       if (!wrap) return;
-      var live = 0;
       function apply(sel, href) {
         var b = wrap.querySelector(sel);
         if (!b) return;
-        if (href) { b.href = href; b.removeAttribute('aria-disabled'); live++; }
+        if (href) { b.href = href; b.removeAttribute('aria-disabled'); }
         else { b.removeAttribute('href'); b.setAttribute('aria-disabled', 'true'); }
       }
+      // The WhatsApp button opens a chat with a ready-to-send draft in the visitor's
+      // current site language, so all they have to do is press send.
+      var waGreeting = (COPY[lang()].wa || {}).contactGreeting || '';
+      var waHref = WHATSAPP_NUMBER
+        ? 'https://wa.me/' + WHATSAPP_NUMBER + (waGreeting ? '?text=' + encodeURIComponent(waGreeting) : '')
+        : '';
       apply('.contact-email', CONTACT_EMAIL ? 'mailto:' + CONTACT_EMAIL : '');
       apply('.contact-facebook', FACEBOOK_URL);
-      apply('.contact-whatsapp', WHATSAPP_NUMBER ? 'https://wa.me/' + WHATSAPP_NUMBER : '');
-      var status = document.querySelector('.contact-status');
-      if (status && live > 0) status.hidden = true;
+      apply('.contact-whatsapp', waHref);
     }
 
     function init() { buildModal(); handleHash(); wireContact(); }
@@ -303,6 +310,7 @@
     });
     window.addEventListener('hashchange', handleHash);
     window.addEventListener('firstmotion:language', function () {
+      wireContact(); // re-draft the WhatsApp message in the newly selected language
       if (!fit.open) return;
       syncChrome();
       renderStep();
