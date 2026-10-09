@@ -24,15 +24,23 @@ Coral is reserved for action: the CTA, the first domino (the push) and the last 
 
 - Display: **Suez One** (Hebrew + Latin), headlines and domino labels only.
 - Text: **Assistant** 400–800.
+- Both are self-hosted from `assets/fonts/` (no Google Fonts request).
 - Headlines are large and sit tight (line-height ~1); body copy stays at 17–21px with 1.6 line height and ≤ 60ch.
 - No tracked all-caps eyebrows. Section labels were removed; headings carry the structure.
 
 ## Motion
 
-- One orchestrated moment: the hero chain falls when it scrolls into view (150ms stagger, ease-in fall), the revenue tile lights up, and "Push again" replays it.
-- The fall direction mirrors with the language: right-to-left in Hebrew, left-to-right in English.
-- `prefers-reduced-motion` and the accessibility widget's "stop motion" both show the end state with no animation.
-- Only transforms and opacity are animated.
+Built with GSAP + ScrollTrigger and Lenis smooth scroll (vendored in `assets/vendor/`).
+
+- **Opening:** a coral domino stands, tips, and the curtain lifts (once per session).
+- **Hero:** dark cinematic Higgsfield video loop of the domino chain; headline lines rise from a mask; parallax as you scroll away.
+- **Marquee:** coral band whose speed answers scroll velocity.
+- **Domino chain (centerpiece):** on desktop the section pins; each scroll step tips the next domino and swaps the stage image and copy. On mobile it becomes a stacked list with image parallax.
+- **Gap map:** the crack opens, then a coral bar sweeps across to "First Motion: the whole chain".
+- Masked word reveals on headings, a drawing line over the four steps, tilting fit cards, magnetic CTAs, animated FAQ, pointer-following glow in the contact section.
+- Directions mirror for RTL/LTR. `prefers-reduced-motion`, the a11y "stop motion" toggle, or missing JS all show the finished state with no animation.
+
+Media generated in Higgsfield is hotlinked for now; `scripts/localize-media.sh` pulls it into `assets/media/` as WebP/MP4.
 
 ## CTA
 

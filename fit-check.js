@@ -173,6 +173,7 @@
       var focusables = modal.querySelectorAll('button:not(.fitc-close), [href], input');
       (focusables[0] || modal.querySelector('.fitc-close')).focus({ preventScroll: true });
       requestAnimationFrame(function () { overlay.classList.add('open'); });
+      window.dispatchEvent(new CustomEvent('firstmotion:modal', { detail: { open: true } }));
     }
 
     function closeModal() {
@@ -184,6 +185,7 @@
         history.replaceState(null, '', location.pathname + location.search);
       }
       setTimeout(function () { overlay.hidden = true; }, 220);
+      window.dispatchEvent(new CustomEvent('firstmotion:modal', { detail: { open: false } }));
       if (fit.lastFocus && fit.lastFocus.focus) fit.lastFocus.focus();
     }
 
