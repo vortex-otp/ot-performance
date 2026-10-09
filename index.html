@@ -3,265 +3,296 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>First Motion | שיווק וטכנולוגיה שמייצרים תנופה</title>
-  <meta name="description" content="First Motion מחברת אסטרטגיית צמיחה, פרפורמנס, תוכנה, אוטומציה ודאטה למערכת אחת שמתקדמת מקליק להכנסה.">
-  <meta name="theme-color" content="#f4efdf">
+  <title>First Motion | מהלך אחד נכון. הכול זז.</title>
+  <meta name="description" content="First Motion היא סוכנות פרפורמנס וצמיחה שמודדת הצלחה במחיר למכירה, לא במחיר לליד. פרסום, דפי נחיתה, אוטומציה, CRM ומדידה בשרשרת אחת.">
+  <meta name="theme-color" content="#1D0C22">
   <link rel="canonical" href="https://firstmotion.co/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="he_IL">
   <meta property="og:site_name" content="First Motion">
   <meta property="og:url" content="https://firstmotion.co/">
-  <meta property="og:title" content="First Motion | Growth &amp; technology office">
-  <meta property="og:description" content="המהלך הראשון שמחבר כיוון שיווקי, תשתית טכנולוגית ותנופה עסקית.">
+  <meta property="og:title" content="First Motion | מהלך אחד נכון. הכול זז.">
+  <meta property="og:description" content="פרסום, דפים, מענה, CRM ומדידה בשרשרת אחת שנמדדת עד המכירה.">
   <meta property="og:image" content="https://firstmotion.co/assets/og-card.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="First Motion — מהלך אחד נכון. הכול זז.">
+  <meta property="og:image:alt" content="First Motion: מהלך אחד נכון. הכול זז.">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="assets/first-motion-mark.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&amp;family=Noto+Sans+Hebrew:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+  <link rel="preload" href="assets/fonts/suez-one-hebrew-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/assistant-hebrew-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <script>(function(d){var h=d.documentElement;h.classList.add('js');try{if(sessionStorage.getItem('fm-intro'))h.classList.add('intro-seen');}catch(e){}if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)h.classList.add('no-motion');setTimeout(function(){if(!window.__fmReady)h.classList.add('no-motion');},3000);})(document);</script>
   <link rel="stylesheet" href="styles.css">
   <script async src="https://vortex-prd.vercel.app/t.js?k=wk_h3h2Pd0D1dhSOxzuHJ8gNUEgU5rAaEdU0L9AQxFx"></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-en="Skip to main content">דילוג לתוכן הראשי</a>
 
+  <div class="intro" id="intro" aria-hidden="true">
+    <span class="intro-tile"></span>
+    <span class="intro-word">First Motion</span>
+  </div>
+
   <header class="site-header" id="site-header">
-    <a class="logo" href="#main" aria-label="FIRST MOTION, ראש העמוד">
-      <img class="brand-symbol" src="assets/first-motion-mark.svg" alt="" width="40" height="40">
-      <span class="logo-copy"><strong>FIRST MOTION</strong><small>Growth &amp; technology office</small></span>
+    <a class="logo" href="#main" aria-label="First Motion, ראש העמוד" data-en-label="First Motion, top of page">
+      <img class="brand-symbol" src="assets/first-motion-mark.svg" alt="" width="36" height="36">
+      <span class="logo-copy"><strong>First Motion</strong></span>
     </a>
-    <nav class="main-nav" aria-label="ניווט ראשי">
-      <a href="#fit" data-en="Who it fits">למי זה מתאים</a>
-      <a href="#system" data-en="The system">המערכת</a>
-      <a href="#method" data-en="How we work">איך עובדים</a>
+    <nav class="main-nav" aria-label="ניווט ראשי" data-en-label="Main navigation">
+      <a href="#chain" data-en="The method">השיטה</a>
+      <a href="#gap" data-en="Where it breaks">איפה זה נשבר</a>
       <a href="#founders" data-en="Who we are">מי אנחנו</a>
+      <a href="#faq" data-en="Questions">שאלות</a>
     </nav>
     <div class="header-actions">
       <div class="lang-toggle" role="group" aria-label="Language">
         <button class="lang-opt" type="button" data-lang="he" aria-pressed="true">עב</button>
         <button class="lang-opt" type="button" data-lang="en" aria-pressed="false">EN</button>
       </div>
-      <a class="header-cta" href="#fit-check" data-en="Check fit">בדיקת התאמה</a>
-      <button class="menu-toggle" type="button" aria-label="פתיחת תפריט" aria-expanded="false"><span></span><span></span></button>
+      <a class="header-cta magnetic" href="#fit-check" data-en="Find your first move">מצאו את המהלך הראשון</a>
+      <button class="menu-toggle" type="button" aria-label="תפריט" data-en-label="Menu" aria-expanded="false"><span></span><span></span></button>
     </div>
   </header>
 
   <main id="main">
+    <!-- ── Hero: cinematic, dark ── -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-stage" aria-hidden="true">
-        <span class="frame frame-1"></span>
-        <span class="frame frame-2"></span>
-        <span class="frame frame-3"></span>
-        <span class="frame frame-4"></span>
-        <span class="frame-origin"></span>
-        <span class="frame-label">FRAME 01 → 04</span>
+      <div class="hero-media" aria-hidden="true">
+        <img class="hero-poster" src="https://d8j0ntlcm91z4.cloudfront.net/user_3JJYQNJGGyTNO977GOpfU1mt7MM/hf_20261009_130341_d610dc80-ce16-4bd4-9bf7-d86d70b285e3.png" alt="" width="1344" height="752" fetchpriority="high">
+        <video class="hero-video" muted loop playsinline preload="none" data-src="https://d8j0ntlcm91z4.cloudfront.net/user_3JJYQNJGGyTNO977GOpfU1mt7MM/hf_20261009_130541_902f4f48-822b-4bfd-8721-a10de06f9cf8.mp4"></video>
+        <span class="hero-shade"></span>
       </div>
-      <div class="hero-copy reveal">
-        <p class="kicker" data-en="Independent growth &amp; technology office">משרד עצמאי לצמיחה וטכנולוגיה</p>
-        <h1 id="hero-title"><span data-en="One right move.">מהלך אחד נכון.</span><em data-en="Everything moves.">הכול זז.</em></h1>
-        <div class="hero-bottom">
-          <div class="hero-intro">
-          <p class="hero-lead" data-en="We build growth systems for businesses—from advertising and campaigns to websites, automation, and strategy that drive more leads, more sales, and less manual work.<br><br>Whether your bottleneck is in marketing, your website, or your sales process, we identify it and build exactly what's needed to keep your business growing.">אנחנו בונים מערכות צמיחה לעסקים - מפרסום וקמפיינים ועד אתרים, אוטומציות ו-אסטרטגיות שמביאים יותר לידים, יותר מכירות ופחות עבודה ידנית.<br><br>לא משנה אם צוואר הבקבוק שלכם הוא בפרסום, באתר או בתהליך המכירה - אנחנו מזהים אותו ובונים את מה שצריך כדי שהעסק ימשיך לצמוח.</p>
-          <div class="contact-methods" aria-label="דרכי יצירת קשר">
-            <a class="button contact-method contact-email" aria-disabled="true" data-en="Email">מייל</a>
-            <a class="button contact-method contact-facebook" aria-disabled="true" target="_blank" rel="noopener" data-en="Facebook">פייסבוק</a>
-            <a class="button contact-method contact-whatsapp" aria-disabled="true" target="_blank" rel="noopener" data-en="WhatsApp">וואטסאפ</a>
-          </div>
-          </div>
+      <div class="hero-inner">
+        <h1 id="hero-title" class="hero-title">
+          <span class="line"><span class="line-in" data-en="One right move.">מהלך אחד נכון.</span></span>
+          <span class="line"><span class="line-in accent" data-en="Everything moves.">הכול זז.</span></span>
+        </h1>
+        <div class="hero-foot">
+          <p class="hero-lead" data-en="We measure success by cost per sale, not cost per lead. So we build the whole chain that leads to it: ads, pages, response, CRM and measurement, owned by one team.">אנחנו מודדים הצלחה במחיר למכירה, לא במחיר לליד. לכן אנחנו בונים את כל השרשרת שמובילה אליה: פרסום, דפים, מענה, CRM ומדידה, תחת אחריות של צוות אחד.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#motion-lab" data-en="Try the first move">נסו את המהלך הראשון</a>
-            <a class="text-link" href="#system" data-en="What we connect">מה אנחנו מחברים <span aria-hidden="true">↙</span></a>
+            <a class="button button-primary magnetic" href="#fit-check"><span data-en="Find your first move">מצאו את המהלך הראשון</span></a>
+            <a class="button button-ghost" href="#chain"><span data-en="See the method">ראו את השיטה</span></a>
           </div>
         </div>
       </div>
-      <div class="hero-foot" aria-hidden="true"><span>FIRST MOTION®</span><span>MARKETING × SOFTWARE × DATA</span><span>IL / 2026</span></div>
+      <a class="scroll-cue" href="#chain" aria-label="גללו לשיטה" data-en-label="Scroll to the method"><span></span></a>
     </section>
 
-    <div class="motion-marquee" aria-hidden="true"><div>STRATEGY / PERFORMANCE / CREATIVE / SOFTWARE / AUTOMATION / DATA /&nbsp;</div><div>STRATEGY / PERFORMANCE / CREATIVE / SOFTWARE / AUTOMATION / DATA /&nbsp;</div></div>
-
-    <section class="motion-lab" id="motion-lab" aria-labelledby="motion-lab-title">
-      <div class="lab-copy reveal">
-        <p class="section-index light">FIRST MOVE / INTERACTIVE</p>
-        <h2 id="motion-lab-title"><span data-en="Catch the signal.">תפסו את האות.</span><em data-en="Connect the system.">חברו את המערכת.</em></h2>
-        <p data-en="Stop the moving signal inside the frame. Four accurate hits connect the journey from attention to revenue. Each round gets faster and the target gets tighter.">עצרו את האות הנע בתוך הפריים. ארבע פגיעות מדויקות מחברות את המסע מקשב ועד להכנסה. בכל סיבוב המהירות עולה והמטרה מצטמצמת.</p>
+    <!-- ── Marquee ── -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span data-en="Cost per sale, not cost per lead">מחיר למכירה, לא מחיר לליד</span><i></i>
+        <span data-en="One team, the whole chain">צוות אחד, כל השרשרת</span><i></i>
+        <span data-en="Measured to the sale">נמדד עד המכירה</span><i></i>
+        <span data-en="Yours, not ours">שלכם, לא שלנו</span><i></i>
+        <span data-en="Cost per sale, not cost per lead">מחיר למכירה, לא מחיר לליד</span><i></i>
+        <span data-en="One team, the whole chain">צוות אחד, כל השרשרת</span><i></i>
+        <span data-en="Measured to the sale">נמדד עד המכירה</span><i></i>
+        <span data-en="Yours, not ours">שלכם, לא שלנו</span><i></i>
       </div>
-      <div class="lab-panel game-panel reveal" data-state="idle" data-round="0">
-        <div class="game-topline">
-          <strong class="game-score"><span data-en="Score">ניקוד</span> <b>0000</b></strong>
-          <span class="game-best"><span data-en="Best">שיא</span> <b>0000</b></span>
+    </div>
+
+    <!-- ── The domino chain (pinned, scroll-driven on desktop) ── -->
+    <section class="chain" id="chain" aria-labelledby="chain-title">
+      <div class="chain-pin">
+        <div class="chain-head">
+          <h2 id="chain-title" class="reveal-lines" data-en="The domino chain">שרשרת הדומינו</h2>
+          <p data-en="Five pieces, one owner. We find the piece that is holding everything back, push it first, and connect the rest so the motion carries through to revenue.">חמש אבנים, בעלות אחת. אנחנו מאתרים את האבן שתוקעת את הכול, מפילים אותה ראשונה, ומחברים את השאר כך שהתנועה תגיע עד ההכנסה.</p>
+          <ol class="chain-dots" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li></ol>
         </div>
-        <ol class="game-progress" aria-label="שלבי המשחק" data-en-label="Game stages">
-          <li class="active"><span>01</span><strong data-en="Attention">קשב</strong></li>
-          <li><span>02</span><strong data-en="Action">פעולה</strong></li>
-          <li><span>03</span><strong data-en="Lead">ליד</strong></li>
-          <li><span>04</span><strong data-en="Revenue">הכנסה</strong></li>
+
+        <div class="chain-stage">
+          <div class="chain-row" aria-hidden="true">
+            <span class="cd" style="--i:0"><b data-en="Attention">קשב</b></span>
+            <span class="cd" style="--i:1"><b data-en="Action">פעולה</b></span>
+            <span class="cd" style="--i:2"><b data-en="Lead">ליד</b></span>
+            <span class="cd" style="--i:3"><b data-en="Response">מענה</b></span>
+            <span class="cd cd-last" style="--i:4"><b data-en="Revenue">הכנסה</b></span>
+          </div>
+
+          <ol class="chain-panels">
+            <li class="cpanel">
+              <figure class="cpanel-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JJYQNJGGyTNO977GOpfU1mt7MM/hf_20261009_130342_8bd3ef61-7fd9-4027-92ce-e6f6262b652f.png" alt="" width="1168" height="880" loading="lazy"></figure>
+              <div class="cpanel-copy">
+                <p class="cpanel-step"><span data-en="Attention">קשב</span></p>
+                <h3 data-en="Demand from the right people">ביקוש מהאנשים הנכונים</h3>
+                <p data-en="Paid media, organic content and creative built around a business goal, with creative tested in rounds rather than guessed.">מדיה ממומנת, תוכן אורגני וקריאייטיב שנבנים סביב יעד עסקי, עם קריאייטיב שנבדק בסבבים ולא מנוחש.</p>
+                <ul class="chips"><li>Meta</li><li>Google</li><li>TikTok</li><li data-en="Creative testing">בדיקות קריאייטיב</li></ul>
+              </div>
+            </li>
+            <li class="cpanel">
+              <figure class="cpanel-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JJYQNJGGyTNO977GOpfU1mt7MM/hf_20261009_130521_4268702c-9819-4569-8314-b0268b6236ee.png" alt="" width="1168" height="880" loading="lazy"></figure>
+              <div class="cpanel-copy">
+                <p class="cpanel-step"><span data-en="Action">פעולה</span></p>
+                <h3 data-en="Pages that lead to one next step">דפים שמובילים לצעד אחד</h3>
+                <p data-en="Landing pages, sites and offers planned around a single clear action, and improved from real behavior.">דפי נחיתה, אתרים והצעות שמתוכננים סביב פעולה אחת ברורה, ומשתפרים לפי התנהגות אמיתית.</p>
+                <ul class="chips"><li data-en="Landing pages">דפי נחיתה</li><li>CRO</li><li data-en="Offer &amp; messaging">הצעה ומסר</li></ul>
+              </div>
+            </li>
+            <li class="cpanel">
+              <figure class="cpanel-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JJYQNJGGyTNO977GOpfU1mt7MM/hf_20261009_130523_f1f5cc6a-8810-44a4-a172-2d48cd06cc46.png" alt="" width="1344" height="752" loading="lazy"></figure>
+              <div class="cpanel-copy">
+                <p class="cpanel-step"><span data-en="Lead">ליד</span></p>
+                <h3 data-en="Every lead counted, once and correctly">כל ליד נספר, פעם אחת ונכון</h3>
+                <p data-en="Forms, server-side tracking and conversion APIs, so the platforms learn from real leads and you see where each one came from.">טפסים, טראקינג צד-שרת ו-Conversions API, כדי שהפלטפורמות ילמדו מלידים אמיתיים ואתם תראו מאיפה הגיע כל אחד.</p>
+                <ul class="chips"><li data-en="Server-side tracking">טראקינג צד-שרת</li><li>Conversions API</li><li data-en="Attribution">ייחוס</li></ul>
+              </div>
+            </li>
+            <li class="cpanel">
+              <figure class="cpanel-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JJYQNJGGyTNO977GOpfU1mt7MM/hf_20261009_130342_144d985e-a6b2-486f-95c5-bf532fbe8a4b.png" alt="" width="1168" height="880" loading="lazy"></figure>
+              <div class="cpanel-copy">
+                <p class="cpanel-step"><span data-en="Response">מענה</span></p>
+                <h3 data-en="An answer while the lead is still warm">מענה כשהליד עוד חם</h3>
+                <p data-en="WhatsApp, CRM and AI flows that reply, qualify and route each inquiry to the right person, with follow-ups that don't depend on memory.">וואטסאפ, CRM ותהליכי AI שעונים, מסננים ומנתבים כל פנייה לאדם הנכון, עם פולואפ שלא תלוי בזיכרון של אף אחד.</p>
+                <ul class="chips"><li>WhatsApp API</li><li>CRM</li><li data-en="Lead routing">ניתוב לידים</li><li data-en="Follow-up">פולואפ</li></ul>
+              </div>
+            </li>
+            <li class="cpanel">
+              <figure class="cpanel-media"><img src="https://d8j0ntlcm91z4.cloudfront.net/user_3JJYQNJGGyTNO977GOpfU1mt7MM/hf_20261009_130341_eeab15fe-c7ea-49e8-b720-b5aca4157c93.png" alt="" width="1168" height="880" loading="lazy"></figure>
+              <div class="cpanel-copy">
+                <p class="cpanel-step"><span data-en="Revenue">הכנסה</span></p>
+                <h3 data-en="Sales sent back to the algorithm">מכירות שחוזרות לאלגוריתם</h3>
+                <p data-en="We connect spend, leads and closed deals in one view, and send sale outcomes back to Meta and Google so they optimize for buyers, not form-fillers.">מחברים הוצאה, לידים ועסקאות סגורות לתמונה אחת, ומחזירים את תוצאות המכירה ל-Meta ול-Google כדי שהן יחפשו קונים, לא ממלאי טפסים.</p>
+                <ul class="chips"><li data-en="Dashboards">דשבורדים</li><li data-en="Offline conversions">המרות אופליין</li><li data-en="Cost per sale">עלות למכירה</li></ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Where it breaks ── -->
+    <section class="gap" id="gap" aria-labelledby="gap-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="gap-title" class="reveal-lines" data-en="Most money isn't lost on the click. It's lost between the lead and the sale.">רוב הכסף לא הולך לאיבוד בקליק. הוא הולך לאיבוד בין הליד למכירה.</h2>
+          <p class="reveal-up" data-en="Ad agencies stop at the lead. Automation shops start after it. The gap in the middle, the first minutes after someone raises a hand, is where nobody is accountable.">סוכנויות פרסום עוצרות בליד. בתי אוטומציה מתחילים אחריו. הפער באמצע, הדקות הראשונות אחרי שמישהו השאיר פרטים, הוא המקום שבו אף אחד לא אחראי.</p>
+        </div>
+        <div class="gap-map" role="img" aria-label="סוכנות פרסום אחראית על קשב, פעולה וליד. בית אוטומציה אחראי על מענה והכנסה. הפער ביניהם לא שייך לאף אחד. First Motion אחראית על כל השרשרת." data-en-label="An ad agency owns attention, action and lead. An automation shop owns response and revenue. The gap between them belongs to nobody. First Motion owns the whole chain.">
+          <div class="gap-group gap-ads">
+            <div class="gap-tiles"><span data-en="Attention">קשב</span><span data-en="Action">פעולה</span><span data-en="Lead">ליד</span></div>
+            <p class="owner" data-en="Ad agency">סוכנות פרסום</p>
+          </div>
+          <div class="gap-break"><span class="gap-crack"></span><p class="owner owner-none" data-en="Nobody">אף אחד</p></div>
+          <div class="gap-group gap-auto">
+            <div class="gap-tiles"><span data-en="Response">מענה</span><span data-en="Revenue">הכנסה</span></div>
+            <p class="owner" data-en="Automation shop">בית אוטומציה</p>
+          </div>
+          <div class="gap-us"><span class="gap-us-bar"></span><p data-en="First Motion: the whole chain">First Motion: כל השרשרת</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── First move ── -->
+    <section class="first-move" id="method" aria-labelledby="method-title">
+      <div class="wrap">
+        <div class="first-move-intro">
+          <h2 id="method-title" class="reveal-lines" data-en="It starts with the first move">הכול מתחיל במהלך הראשון</h2>
+          <p class="reveal-up" data-en="Before any campaign, we map the whole chain and end with a written plan: which domino to push first, why, and how we will measure it.">לפני כל קמפיין, אנחנו ממפים את כל השרשרת ומסיימים בתוכנית כתובה: איזו אבן להפיל ראשונה, למה, ואיך נמדוד אותה.</p>
+        </div>
+        <ol class="steps">
+          <li class="step"><span class="step-num">1</span><h3 data-en="Map">ממפים</h3><p data-en="Goals, offer, channels, tracking, response time and sales process.">יעדים, הצעה, ערוצים, מדידה, זמן מענה ותהליך מכירה.</p></li>
+          <li class="step"><span class="step-num">2</span><h3 data-en="Find the first domino">מאתרים את האבן הראשונה</h3><p data-en="The one constraint that, once fixed, moves the rest.">החסם האחד שכשמתקנים אותו, השאר זז איתו.</p></li>
+          <li class="step"><span class="step-num">3</span><h3 data-en="Build and connect">בונים ומחברים</h3><p data-en="Campaigns, pages, automation and measurement, connected end to end.">קמפיינים, דפים, אוטומציה ומדידה, מחוברים מקצה לקצה.</p></li>
+          <li class="step"><span class="step-num">4</span><h3 data-en="Scale what works">מגדילים את מה שעובד</h3><p data-en="We learn from real sales, fix friction and add budget where it pays back.">לומדים ממכירות אמיתיות, מתקנים חיכוך ומוסיפים תקציב איפה שהוא מחזיר.</p></li>
         </ol>
-        <div class="game-arena" aria-hidden="true">
-          <span class="game-rail"></span>
-          <span class="game-target"><i></i><small>HIT</small></span>
-          <span class="game-signal"></span>
-          <span class="game-flash"></span>
-          <strong class="game-arena-title">FIRST<br>MOTION</strong>
-          <small class="game-round">ROUND 01 / 04</small>
+      </div>
+    </section>
+
+    <!-- ── Fit ── -->
+    <section class="fit" id="fit" aria-labelledby="fit-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="fit-title" class="reveal-lines" data-en="Built for businesses that already move">בנוי לעסקים שכבר זזים</h2>
+          <p class="reveal-up" data-en="The strongest fit is an active business with a proven offer and marketing that is already running, but not yet working as one system.">ההתאמה החזקה ביותר היא לעסק פעיל, עם הצעה מוכחת ושיווק שכבר רץ, אבל עוד לא עובד כמערכת אחת.</p>
         </div>
-        <div class="game-feedback" id="game-feedback" aria-live="polite">
-          <strong data-en="Ready for the first move?">מוכנים למהלך הראשון?</strong>
-          <span data-en="Press start, then lock the signal inside the frame.">לחצו התחלה ואז נעלו את האות בתוך הפריים.</span>
-        </div>
-        <button class="game-action" id="game-action" type="button" aria-describedby="game-help"><span data-en="Start game">התחילו לשחק</span><kbd>SPACE</kbd></button>
-        <p class="game-help" id="game-help" data-en="Tap the button or press Space when the square enters the target.">לחצו על הכפתור או על מקש הרווח כשהריבוע נכנס למטרה.</p>
-        <div class="game-complete" hidden>
-          <strong data-en="System connected.">המערכת מחוברת.</strong>
-          <p><span data-en="Final score">ניקוד סופי</span> <b>0000</b></p>
-          <button class="game-restart" type="button" data-en="Play again">שחקו שוב</button>
+        <div class="fit-grid">
+          <article class="tilt"><h3 data-en="Lead-based businesses">עסקים מבוססי לידים</h3><p data-en="Leads come in, but response speed, quality and source aren't managed in one place.">לידים נכנסים, אבל מהירות המענה, האיכות והמקור לא מנוהלים במקום אחד.</p></article>
+          <article class="tilt"><h3 data-en="Ecommerce brands">מותגי איקומרס</h3><p data-en="There is traffic and there are sales, but acquisition, conversion and retention improve separately.">יש תנועה ויש מכירות, אבל הגיוס, ההמרה והשימור משתפרים כל אחד לבד.</p></article>
+          <article class="tilt"><h3 data-en="B2B teams">צוותי B2B</h3><p data-en="Marketing creates interest, but the path from inquiry to a real opportunity isn't clear.">השיווק מייצר עניין, אבל הדרך מפנייה להזדמנות אמיתית לא ברורה.</p></article>
+          <article class="tilt fit-condition"><h3 data-en="The one condition">התנאי היחיד</h3><p data-en="You're willing to measure honestly and fix the whole journey, not only the ad account.">אתם מוכנים למדוד בכנות ולתקן את כל המסע, לא רק את חשבון הפרסום.</p></article>
         </div>
       </div>
     </section>
 
-    <section class="fit section" id="fit" aria-labelledby="fit-title">
-      <div class="section-intro reveal">
-        <p class="section-index">01 / FIT</p>
-        <h2 id="fit-title" data-en="For businesses with motion, but without one connected system.">לעסקים שכבר זזים,<br>אבל עדיין לא עובדים כמערכת.</h2>
-        <p data-en="The strongest fit is an active business with a proven offer, ongoing marketing activity and a real need to understand what creates revenue.">ההתאמה החזקה ביותר היא לעסק פעיל, עם הצעה מוכחת, פעילות שיווקית קיימת וצורך אמיתי להבין מה מייצר הכנסה.</p>
-      </div>
-      <div class="fit-list reveal">
-        <article>
-          <span>01</span>
-          <div><h3 data-en="Lead generation businesses">עסקים מבוססי לידים</h3><p data-en="Leads arrive, but response time, quality and source are not managed in one place.">לידים נכנסים, אבל מהירות התגובה, האיכות והמקור שלהם לא מנוהלים במקום אחד.</p></div>
-        </article>
-        <article>
-          <span>02</span>
-          <div><h3 data-en="Ecommerce brands">מותגי איקומרס</h3><p data-en="There is traffic and sales, but acquisition, conversion and retention are optimized separately.">יש תנועה ומכירות, אבל הגיוס, ההמרה והשימור משתפרים בנפרד במקום יחד.</p></div>
-        </article>
-        <article>
-          <span>03</span>
-          <div><h3 data-en="B2B growth teams">חברות וצוותי B2B</h3><p data-en="Marketing creates interest, but the path from inquiry to qualified opportunity is unclear.">השיווק מייצר עניין, אבל הדרך מפנייה להזדמנות איכותית לא מספיק ברורה.</p></div>
-        </article>
-        <article class="fit-check">
-          <span aria-hidden="true">✓</span>
-          <div><h3 data-en="The key condition">התנאי החשוב</h3><p data-en="You are ready to measure honestly, fix infrastructure and improve the whole journey, not only the ad account.">אתם מוכנים למדוד בכנות, לתקן תשתיות ולשפר את המסע כולו, לא רק את חשבון הפרסום.</p></div>
-        </article>
-      </div>
-    </section>
-
-    <section class="leak section" aria-labelledby="leak-title">
-      <div class="leak-copy reveal">
-        <p class="section-index light">THE GAP</p>
-        <h2 id="leak-title" data-en="More traffic does not fix a leaking journey.">עוד תנועה לא מתקנת<br>מסע לקוח שדולף.</h2>
-        <p data-en="When every supplier sees only their piece, the business pays for the gaps: a campaign without the right page, a lead without a fast response, and a report without business context.">כשכל ספק רואה רק את החלק שלו, העסק משלם על החיבורים החסרים: קמפיין בלי עמוד נכון, ליד בלי תגובה מהירה ודוח בלי הקשר עסקי.</p>
-      </div>
-      <div class="leak-map reveal" role="img" aria-label="נקודות דליפה בין שיווק למכירה">
-        <div><strong data-en="Attention">חשיפה</strong><small>Campaign</small></div><i></i>
-        <div><strong data-en="Action">פעולה</strong><small>Page</small></div><i class="leaking"></i>
-        <div><strong data-en="Lead">ליד</strong><small>Form</small></div><i></i>
-        <div><strong data-en="Response">תגובה</strong><small>CRM</small></div><i class="leaking"></i>
-        <div><strong data-en="Sale">מכירה</strong><small>Revenue</small></div>
+    <!-- ── Founders ── -->
+    <section class="founders" id="founders" aria-labelledby="founders-title">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="founders-title" class="reveal-lines" data-en="Tamir sets the direction. Ofir builds the engine.">תמיר מכוון. אופיר בונה.</h2>
+          <p class="reveal-up" data-en="Marketing without an engine stalls. An engine without direction doesn't grow. One partnership holds both sides.">שיווק בלי מנוע נתקע. מנוע בלי כיוון לא צומח. שותפות אחת שמחזיקה את שני הצדדים.</p>
+        </div>
+        <div class="founder-pair">
+          <article class="founder-card founder-tamir">
+            <div class="founder-initial" aria-hidden="true"><span>ת</span></div>
+            <div class="founder-copy">
+              <h3 data-en="Tamir">תמיר</h3>
+              <p class="founder-role" data-en="Marketing, performance and growth">שיווק, פרפורמנס וצמיחה</p>
+              <p data-en="Eight years in marketing, performance and growth. Tamir connects the business goal, the offer, the message and the channels into one clear direction.">8 שנים בשיווק, פרפורמנס וצמיחה. תמיר מחבר בין היעד העסקי, ההצעה, המסר והערוצים לכיוון אחד ברור.</p>
+            </div>
+          </article>
+          <article class="founder-card founder-ofir">
+            <div class="founder-initial" aria-hidden="true"><span>א</span></div>
+            <div class="founder-copy">
+              <h3 data-en="Ofir">אופיר</h3>
+              <p class="founder-role" data-en="Software, cyber and systems">תוכנה, סייבר ומערכות</p>
+              <p data-en="A software and cyber professional. Ofir turns the strategy into infrastructure, automation and data that grow with the business, and keeps it secure.">איש תוכנה וסייבר. אופיר הופך את האסטרטגיה לתשתיות, אוטומציות ודאטה שגדלים יחד עם העסק, ושומר שהכול יהיה מאובטח.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="system section" id="system" aria-labelledby="system-title">
-      <div class="section-intro reveal">
-        <p class="section-index">02 / SYSTEM</p>
-        <h2 id="system-title" data-en="Four layers. One growth loop.">ארבע שכבות.<br>לולאת צמיחה אחת.</h2>
-        <p data-en="We do not sell a fixed bundle. We identify the constraint and connect the layers required to remove it.">אנחנו לא מוכרים חבילה קבועה. אנחנו מזהים את צוואר הבקבוק ומחברים את השכבות הנדרשות כדי לפתור אותו.</p>
-      </div>
-      <div class="system-layers reveal">
-        <article><span class="layer-num">01</span><div><p class="layer-label">ACQUIRE</p><h3 data-en="Create qualified demand">מייצרים ביקוש איכותי</h3><p data-en="Paid media, organic content, creative and channel strategy built around a business target.">מדיה ממומנת, תוכן אורגני, קריאייטיב ואסטרטגיית ערוצים סביב יעד עסקי.</p><ul><li>Meta &amp; Google</li><li>SEO &amp; Content</li><li>Creative testing</li></ul></div></article>
-        <article><span class="layer-num">02</span><div><p class="layer-label">CONVERT</p><h3 data-en="Turn attention into action">הופכים תשומת לב לפעולה</h3><p data-en="Sites, landing pages, stores and forms planned around one clear next step.">אתרים, דפי נחיתה, חנויות וטפסים שמתוכננים סביב הצעד הבא.</p><ul><li>Web &amp; Landing</li><li>CRO</li><li>Offer &amp; Messaging</li></ul></div></article>
-        <article><span class="layer-num">03</span><div><p class="layer-label">OPERATE</p><h3 data-en="Move every lead forward">מקדמים כל ליד בזמן</h3><p data-en="CRM, WhatsApp, Email, SMS and AI flows that respond, qualify and route.">CRM, WhatsApp, Email, SMS ותהליכי AI שמגיבים, מסננים ומנתבים.</p><ul><li>Automation</li><li>Lead routing</li><li>Follow-up</li></ul></div></article>
-        <article><span class="layer-num">04</span><div><p class="layer-label">LEARN</p><h3 data-en="Measure what creates revenue">מודדים מה מייצר הכנסה</h3><p data-en="Tracking, dashboards and analysis that connect spend, behavior, leads and sales.">טראקינג, דשבורדים וניתוח שמחברים הוצאה, התנהגות, לידים ומכירות.</p><ul><li>Analytics</li><li>Attribution</li><li>Optimization</li></ul></div></article>
-      </div>
-    </section>
-
-    <section class="method section" id="method" aria-labelledby="method-title">
-      <div class="method-head reveal">
-        <p class="section-index light">03 / METHOD</p>
-        <h2 id="method-title" data-en="First clarity. Then speed.">קודם בהירות.<br>אחר כך מהירות.</h2>
-      </div>
-      <ol class="method-steps reveal">
-        <li><span>01</span><div><h3 data-en="Map">ממפים</h3><p data-en="Business goals, offer, channels, assets, data and sales process.">יעדים עסקיים, הצעה, ערוצים, נכסים, דאטה ותהליך מכירה.</p></div></li>
-        <li><span>02</span><div><h3 data-en="Prioritize">מתעדפים</h3><p data-en="We identify the biggest constraint and define what success will look like.">מזהים את צוואר הבקבוק המרכזי ומגדירים איך תיראה הצלחה.</p></div></li>
-        <li><span>03</span><div><h3 data-en="Build">מחברים</h3><p data-en="We build and connect the required campaigns, assets, tracking and automation.">מקימים ומחברים את הקמפיינים, הנכסים, המדידה והאוטומציה הנדרשים.</p></div></li>
-        <li><span>04</span><div><h3 data-en="Improve">משפרים</h3><p data-en="We learn from real behavior, fix friction and scale what proves itself.">לומדים מהתנהגות אמיתית, מתקנים חיכוך ומגדילים את מה שמוכיח את עצמו.</p></div></li>
-      </ol>
-      <div class="first-month reveal">
-        <p class="mini-label" data-en="The first working cycle">מחזור העבודה הראשון</p>
-        <h3 data-en="A prioritized plan, clean measurement and a live improvement loop.">תוכנית מתועדפת, מדידה נקייה ולולאת שיפור שעובדת.</h3>
-        <p data-en="The exact deliverables depend on the constraint. We do not promise a generic checklist before seeing the business.">התוצרים המדויקים נקבעים לפי החסם. לא מבטיחים צ׳קליסט גנרי לפני שמבינים את העסק.</p>
+    <!-- ── FAQ ── -->
+    <section class="faq" id="faq" aria-labelledby="faq-title">
+      <div class="wrap faq-wrap">
+        <div class="section-head">
+          <h2 id="faq-title" class="reveal-lines" data-en="What we will and won't promise">מה נבטיח, ומה לא</h2>
+          <p class="reveal-up" data-en="We won't put a number on your results before we've seen the offer, the market and the data. Here is what we can say up front.">לא נשים מספר על התוצאות לפני שראינו את ההצעה, השוק והדאטה. הנה מה שאפשר להגיד כבר עכשיו.</p>
+        </div>
+        <div class="faq-list">
+          <details><summary><span data-en="Do you promise a specific cost per lead?">אתם מתחייבים למחיר לליד?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p data-en="No. A cheap lead isn't a win if it doesn't become a customer. We commit to thorough work, transparent measurement and clear priorities, and we report cost per sale alongside cost per lead.">לא. ליד זול הוא לא ניצחון אם הוא לא הופך ללקוח. אנחנו מתחייבים לעבודה יסודית, מדידה שקופה ותיעדוף ברור, ומדווחים על עלות למכירה לצד עלות לליד.</p></div></details>
+          <details><summary><span data-en="Do you replace our marketing team?">אתם מחליפים את צוות השיווק שלנו?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p data-en="Not necessarily. We can run the full system or work alongside an internal team and existing suppliers. What matters is clear ownership and shared measurement.">לא בהכרח. אפשר להוביל את כל המערכת או לעבוד לצד צוות פנימי וספקים קיימים. מה שחשוב הוא אחריות ברורה ומדידה משותפת.</p></div></details>
+          <details><summary><span data-en="How quickly can things go live?">תוך כמה זמן עולים לאוויר?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p data-en="It depends on the current setup. We prefer a fast, measured launch, but we won't send traffic into a broken journey just to say we launched.">זה תלוי בתשתית הקיימת. אנחנו מעדיפים השקה מהירה ומדודה, אבל לא נשלח תנועה למסע שבור רק כדי לומר שעלינו.</p></div></details>
+          <details><summary><span data-en="Can you work with the systems we already have?">אפשר לעבוד עם המערכות שכבר יש לנו?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p data-en="Yes. First we check what should stay, what needs fixing and what really needs replacing. New software isn't the goal; a working process is.">כן. קודם בודקים מה כדאי להשאיר, מה צריך תיקון ומה באמת דורש החלפה. תוכנה חדשה היא לא המטרה, תהליך שעובד כן.</p></div></details>
+          <details><summary><span data-en="Who owns the accounts and the data?">של מי החשבונות והדאטה?</span><i aria-hidden="true"></i></summary><div class="faq-a"><p data-en="You do. Ad accounts, CRM data and the automations we build stay in your name, documented, so you are never locked in.">שלכם. חשבונות הפרסום, הדאטה ב-CRM והאוטומציות שאנחנו בונים נשארים על שמכם ומתועדים, כך שאתם אף פעם לא תלויים בנו.</p></div></details>
+        </div>
       </div>
     </section>
 
-    <section class="founders section" id="founders" aria-labelledby="founders-title">
-      <div class="founders-head reveal">
-        <p class="section-index light">04 / THE TWO SIDES</p>
-        <h2 id="founders-title" data-en="Tamir sets the direction. Ofir builds the engine.">תמיר מכוון את הצמיחה.<br>אופיר בונה את המנוע.</h2>
-        <p data-en="One partnership that connects the market-facing side with the systems behind it.">שותפות אחת שמחברת בין מה שהשוק רואה לבין המערכות שמניעות את הכול מאחור.</p>
-      </div>
-      <div class="founder-pair reveal">
-        <article class="founder-card founder-tamir">
-          <span class="founder-code">01 / DIRECTION</span>
-          <div class="founder-initial" aria-hidden="true">ת</div>
-          <div><p class="founder-role">MARKETING · PERFORMANCE · GROWTH</p><h3 data-en="Tamir">תמיר</h3><p data-en="The marketing lead, with 8 years of experience in marketing, performance and growth. Tamir connects the business goal, the offer, the message and the channels into a clear direction.">איש השיווק, עם 8 שנות ניסיון בשיווק, פרפורמנס וצמיחה. תמיר מחבר בין היעד העסקי, ההצעה, המסר והערוצים לכיוון ברור שאפשר לפעול לפיו.</p></div>
-        </article>
-        <article class="founder-card founder-ofir">
-          <span class="founder-code">02 / ENGINE</span>
-          <div class="founder-initial" aria-hidden="true">א</div>
-          <div><p class="founder-role">SOFTWARE · CYBER · SYSTEMS</p><h3 data-en="Ofir">אופיר</h3><p data-en="The technology engine, a software and cyber professional. Ofir turns the strategy into infrastructure, automation, data and systems that can scale.">המנוע הטכנולוגי, איש תוכנה וסייבר. אופיר הופך את האסטרטגיה לתשתיות, אוטומציות, דאטה ומערכות שיכולות לגדול.</p></div>
-        </article>
-      </div>
-      <p class="founders-statement reveal" data-en="Marketing without an engine stalls. An engine without direction does not grow. First Motion connects both.">שיווק בלי מנוע נתקע. מנוע בלי כיוון לא צומח.<br><strong>First Motion מחברת את שניהם.</strong></p>
-    </section>
-
-    <section class="principles section" aria-labelledby="principles-title">
-      <div class="section-intro reveal">
-        <p class="section-index">05 / STANDARD</p>
-        <h2 id="principles-title" data-en="What you can expect from the work.">מה אפשר לצפות<br>מצורת העבודה.</h2>
-      </div>
-      <div class="principle-grid reveal">
-        <article><strong>01</strong><h3 data-en="Business context before channel tactics">הקשר עסקי לפני טקטיקה</h3><p data-en="A cheap lead is not a win if it does not become a customer.">ליד זול הוא לא ניצחון אם הוא לא הופך ללקוח.</p></article>
-        <article><strong>02</strong><h3 data-en="One clear source of truth">תמונה אחת מוסכמת</h3><p data-en="Decisions are based on connected data, not screenshots from separate platforms.">החלטות מתקבלות מדאטה מחובר, לא מצילומי מסך של מערכות נפרדות.</p></article>
-        <article><strong>03</strong><h3 data-en="Honest prioritization">תיעדוף כן</h3><p data-en="We say what should happen now, what can wait and what is simply noise.">אומרים מה צריך לקרות עכשיו, מה יכול לחכות ומה הוא פשוט רעש.</p></article>
-      </div>
-    </section>
-
-    <section class="faq section" id="faq" aria-labelledby="faq-title">
-      <div class="section-intro reveal">
-        <p class="section-index">06 / FAQ</p>
-        <h2 id="faq-title" data-en="Questions worth asking before we start.">שאלות שכדאי לשאול<br>לפני שמתחילים.</h2>
-      </div>
-      <div class="faq-list reveal">
-        <details><summary><span data-en="Do you replace our marketing team?">אתם מחליפים את צוות השיווק שלנו?</span><i aria-hidden="true">+</i></summary><p data-en="Not necessarily. We can lead the full system or work with an internal team and existing suppliers. The key is clear ownership and shared measurement.">לא בהכרח. אפשר להוביל את המערכת המלאה או לעבוד עם צוות פנימי וספקים קיימים. המפתח הוא אחריות ברורה ומדידה משותפת.</p></details>
-        <details><summary><span data-en="How quickly can activity go live?">תוך כמה זמן אפשר לעלות לאוויר?</span><i aria-hidden="true">+</i></summary><p data-en="It depends on the current infrastructure. We prefer a fast, measured launch, but we will not send traffic into a broken journey just to say we launched.">זה תלוי בתשתית הקיימת. אנחנו מעדיפים השקה מהירה ומדודה, אבל לא נשלח תנועה למסע שבור רק כדי לומר שעלינו.</p></details>
-        <details><summary><span data-en="Can you work with our existing systems?">אפשר לעבוד עם המערכות שכבר יש לנו?</span><i aria-hidden="true">+</i></summary><p data-en="Yes. We first check what should stay, what needs repair and what truly needs replacement. New software is not the goal; a working process is.">כן. קודם בודקים מה כדאי להשאיר, מה צריך לתקן ומה באמת דורש החלפה. תוכנה חדשה היא לא המטרה, תהליך עובד כן.</p></details>
-        <details><summary><span data-en="Do you promise a specific result?">אתם מתחייבים לתוצאה מסוימת?</span><i aria-hidden="true">+</i></summary><p data-en="We commit to rigorous work, transparent measurement and clear priorities. We do not invent a number before seeing the offer, market, margins and existing data.">אנחנו מתחייבים לעבודה יסודית, מדידה שקופה ותיעדוף ברור. לא ממציאים מספר לפני שרואים את ההצעה, השוק, המרווחים והדאטה הקיים.</p></details>
-      </div>
-    </section>
-
-    <section class="contact section" id="contact" aria-labelledby="contact-title">
-      <div class="contact-main reveal">
-        <p class="section-index light">NEXT STEP</p>
-        <h2 id="contact-title" data-en="Ready to make the first move?">מוכנים לעשות<br>את המהלך הראשון?</h2>
-        <p data-en="Want to know if it's a fit? Take the short compatibility check — if there's a basis, we continue on WhatsApp.">רוצים לדעת אם זה מתאים? עשו בדיקת התאמה קצרה — אם יש בסיס, נמשיך בוואטסאפ.</p>
-        <a class="button button-primary" href="#fit-check" data-en="Start the check">לבדיקת התאמה</a>
+    <!-- ── Contact ── -->
+    <section class="contact" id="contact" aria-labelledby="contact-title">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="contact-inner">
+        <div class="contact-dominos" aria-hidden="true"><span></span><span></span><span></span></div>
+        <h2 id="contact-title" class="reveal-lines" data-en="Ready for the first move?">מוכנים למהלך הראשון?</h2>
+        <p class="reveal-up" data-en="Answer four short questions. If there's a fit, we'll continue on WhatsApp with where we would start.">ענו על ארבע שאלות קצרות. אם יש התאמה, נמשיך בוואטסאפ עם המקום שממנו היינו מתחילים.</p>
+        <a class="button button-primary button-large magnetic" href="#fit-check"><span data-en="Find your first move">מצאו את המהלך הראשון</span></a>
+        <div class="contact-methods" aria-label="דרכי יצירת קשר" data-en-label="Contact options">
+          <span class="contact-label" data-en="Or reach us directly:">או ישירות:</span>
+          <a class="contact-method contact-whatsapp" aria-disabled="true" target="_blank" rel="noopener" data-en="WhatsApp">וואטסאפ</a>
+          <a class="contact-method contact-email" aria-disabled="true" data-en="Email">מייל</a>
+          <a class="contact-method contact-facebook" aria-disabled="true" target="_blank" rel="noopener" data-en="Facebook">פייסבוק</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="footer-brand"><img class="brand-symbol" src="assets/first-motion-mark.svg" alt="" width="40" height="40"><p><strong>FIRST MOTION</strong><small>Direction · Systems · Momentum</small></p></div>
-    <nav aria-label="קישורים משפטיים"><a href="pages/about.html" data-en="About">מי אנחנו</a><a href="pages/privacy.html" data-en="Privacy">פרטיות</a><a href="pages/terms.html" data-en="Terms">תנאים</a><a href="pages/accessibility.html" data-en="Accessibility">נגישות</a></nav>
+    <div class="footer-brand"><img class="brand-symbol" src="assets/first-motion-mark.svg" alt="" width="36" height="36"><p><strong>First Motion</strong><small data-en="One right move. Everything moves.">מהלך אחד נכון. הכול זז.</small></p></div>
+    <nav aria-label="קישורים משפטיים" data-en-label="Legal links"><a href="pages/about.html" data-en="About">מי אנחנו</a><a href="pages/privacy.html" data-en="Privacy">פרטיות</a><a href="pages/terms.html" data-en="Terms">תנאים</a><a href="pages/accessibility.html" data-en="Accessibility">נגישות</a></nav>
     <p class="copyright">© <span class="yr">2026</span> First Motion</p>
   </footer>
 
-  <script src="script.js"></script>
-  <script src="lang.js"></script>
-  <script src="accessibility.js"></script>
-  <script src="fit-check.js"></script>
+  <script src="assets/vendor/gsap.min.js" defer></script>
+  <script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/vendor/lenis.min.js" defer></script>
+  <script src="lang.js" defer></script>
+  <script src="script.js" defer></script>
+  <script src="accessibility.js" defer></script>
+  <script src="fit-check.js" defer></script>
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"Organization","name":"First Motion","url":"https://firstmotion.co/","logo":"https://firstmotion.co/assets/first-motion-mark.svg","description":"מערכת שיווק, דאטה וטכנולוגיה לעסקים פעילים","areaServed":"IL","founder":[{"@type":"Person","name":"Tamir"},{"@type":"Person","name":"Ofir"}]}
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"First Motion","url":"https://firstmotion.co/","logo":"https://firstmotion.co/assets/first-motion-mark.svg","image":"https://firstmotion.co/assets/og-card.png","description":"סוכנות פרפורמנס וצמיחה שמחברת פרסום, דפי נחיתה, אוטומציה, CRM ומדידה בשרשרת אחת שנמדדת עד המכירה.","areaServed":"IL","email":"Marketing@firstmotion.co","sameAs":["https://www.facebook.com/profile.php?id=61592606906080"],"founder":[{"@type":"Person","name":"Tamir","jobTitle":"Marketing, performance and growth"},{"@type":"Person","name":"Ofir","jobTitle":"Software, cyber and systems"}],"knowsAbout":["Performance marketing","Meta Ads","Google Ads","Conversion rate optimization","Marketing automation","CRM","WhatsApp API","Server-side tracking","Attribution"]}
   </script>
 </body>
 </html>
