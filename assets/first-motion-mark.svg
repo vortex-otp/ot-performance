@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
   <title id="title">First Motion</title>
   <desc id="desc">A geometric F crossed by a rising motion path</desc>
-  <path fill="#3C173D" d="M6 8h43l8 7-8 7H21v7h23l7 6-7 7H21v14H6V8Z"/>
-  <path fill="none" stroke="#F45F4A" stroke-linecap="square" stroke-linejoin="miter" stroke-width="6" d="m29 53 9-27 9 13L57 9"/>
-  <rect width="8" height="8" x="25" y="49" fill="#E9DF42"/>
+  <path fill="#2A1430" d="M6 8h43l8 7-8 7H21v7h23l7 6-7 7H21v14H6V8Z"/>
+  <path fill="none" stroke="#C8442A" stroke-linecap="square" stroke-linejoin="miter" stroke-width="6" d="m29 53 9-27 9 13L57 9"/>
+  <rect width="8" height="8" x="25" y="49" fill="#6B2D73"/>
 </svg>

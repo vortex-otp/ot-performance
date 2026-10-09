@@ -24,6 +24,14 @@
       el.innerHTML = en ? el.getAttribute('data-en') : el.getAttribute('data-he');
     });
 
+    // aria-label translations live in data-en-label (Hebrew is the authored value)
+    document.querySelectorAll('[data-en-label]').forEach(function (el) {
+      if (el.getAttribute('data-he-label') === null) {
+        el.setAttribute('data-he-label', el.getAttribute('aria-label') || '');
+      }
+      el.setAttribute('aria-label', en ? el.getAttribute('data-en-label') : el.getAttribute('data-he-label'));
+    });
+
     document.querySelectorAll('.lang-opt').forEach(function (b) {
       var on = b.getAttribute('data-lang') === lang;
       b.classList.toggle('active', on);
