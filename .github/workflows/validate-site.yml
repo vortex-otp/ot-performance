@@ -1,0 +1,38 @@
+name: Validate static site
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Unit, syntax and static checks
+        run: |
+          node --test test/*.test.js
+          for file in script.js lang.js fit-check.js accessibility.js; do node --check "$file"; done
+          python3 test/static-qa.py
+          git diff --check
+      - name: Install pinned browser test runtime
+        run: |
+          npm install --prefix /tmp/firstmotion-qa --no-save --package-lock=false playwright@1.62.1
+          /tmp/firstmotion-qa/node_modules/.bin/playwright install --with-deps chromium
+      - name: Responsive and flow regression checks
+        env:
+          PLAYWRIGHT_MODULE: /tmp/firstmotion-qa/node_modules/playwright
+        run: |
+          export CHROMIUM_PATH="$(node -e "console.log(require(process.env.PLAYWRIGHT_MODULE).chromium.executablePath())")"
+          node test/browser-qa.js --out /tmp/firstmotion-browser-qa --label pull-request
+      - name: Retain browser report and screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: firstmotion-browser-qa
+          path: /tmp/firstmotion-browser-qa
+          if-no-files-found: ignore
