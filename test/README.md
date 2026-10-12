@@ -70,3 +70,5 @@ This loopback preview sends a restrictive Content Security Policy that blocks re
 ## Known execution limit in the authoring environment
 
 On 2026-10-12, local Chromium could not start because the executor denied Unix socket creation (`process_singleton_posix.cc: socket() failed: Operation not permitted`), including an approved elevated launch. The supported cloud browser was available but could not reach this executor's loopback server. Browser cases were authored and syntax checked, but not executed here. Run them in a Chromium-capable environment before treating the visual and interaction checks as passed.
+
+The mobile refinement checks also verify full-width founder biographies, SVG retention through Hebrew–English–Hebrew switching, and an opaque header.

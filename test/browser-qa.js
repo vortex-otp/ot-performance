@@ -448,6 +448,29 @@ async function closeAndCheck(page, trigger, method) {
     });
   }
 
+  for (const pathname of ['/', '/pages/about.html']) {
+    await check(`Founder mobile hierarchy and bilingual SVG retention ${pathname}`, { width: 390, path: pathname }, async ({ page }) => {
+      const original = await page.locator('.founder-details').allTextContents();
+      for (const lang of ['he', 'en', 'he']) {
+        await page.locator(`.lang-opt[data-lang="${lang}"]`).click();
+        assert.equal(await page.locator('.founder-symbol svg').count(), 2, 'Founder marks survive translation');
+        assert.equal(await page.locator('.founder-details svg').count(), 6, 'Detail icons survive translation');
+        assert.equal(await page.locator('.founder-details li').count(), 6);
+        const widths = await page.locator('.founder-card').evaluateAll(cards => cards.map(card => {
+          const css = getComputedStyle(card);
+          return {
+            content: card.clientWidth - parseFloat(css.paddingLeft) - parseFloat(css.paddingRight),
+            biography: card.querySelector('.founder-bio').getBoundingClientRect().width,
+          };
+        }));
+        widths.forEach(size => assert.ok(Math.abs(size.content - size.biography) <= 2, 'Biography uses full card content width'));
+        await verifyOverflow(page);
+      }
+      assert.deepEqual(await page.locator('.founder-details').allTextContents(), original, 'Hebrew copy returns unchanged');
+      assert.equal(await page.locator('.site-header').evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(255, 255, 255)', 'Header stays opaque');
+    });
+  }
+
   for (const width of [390, 1440]) {
     await check(`Normal motion startup and resize ${width}px`, { width, motion: 'no-preference' }, async ({ page }) => {
       await page.waitForTimeout(1500);

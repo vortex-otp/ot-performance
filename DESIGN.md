@@ -30,3 +30,6 @@ No third-party animation dependency is loaded by the new homepage. Native detail
 
 ## Preserved operations
 The existing WhatsApp number, email, Facebook destination, Vortex script and event names, language persistence, legal URLs, and legacy `#chain` / `#gap` links are preserved. No live CRM, AI backend or new tracking system was activated. Fit-check answers stay in the browser until the visitor explicitly continues to a prefilled WhatsApp message; WhatsApp still requires the visitor to review/send.
+
+## Mobile detail refinement
+Founder profiles use the same SVG stroke language as services, AI workflow and hero labels. Each founder has a compact identity row, full-width biography and three concrete areas of responsibility. Cobalt and muted apricot distinguish disciplines without relying on emoji glyphs or claimed client proof. The sticky header is fully opaque so scrolled text cannot show through it.
