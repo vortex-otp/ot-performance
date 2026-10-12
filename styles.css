@@ -128,3 +128,6 @@ html[dir=ltr] .hero h1{font-size:clamp(48px,5.1vw,77px);max-width:15ch}html[dir=
 @media(max-width:370px){.logo strong{font-size:21px}.header-actions{gap:4px}.hero h1{font-size:45px}.hero-actions{display:block}.hero-actions .text-link{margin-top:13px}.platform-names{gap:12px}.platform-names span{font-size:17px}.founder-card{grid-template-columns:1fr}.method-steps{grid-template-columns:1fr}.hero-bottom p{max-width:25ch}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}.a11y-no-motion,.a11y-no-motion *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
 @media print{.site-header,.a11y-toggle,.a11y-panel,.fitc-overlay{display:none!important}.hero,.automation,.contact,.business-fit{background:white!important;color:black!important}.section{padding:30px 0}.hero-art{max-width:350px}a{color:inherit}.workflow,.workflow *{color:black!important}.workflow{border-color:#999}.workflow-nodes li{break-inside:avoid}}
+/* Two-tone focus remains visible on both light and dark brand surfaces. */
+:focus-visible{outline:3px solid var(--ink);box-shadow:0 0 0 6px #fff;outline-offset:2px}
+@media(max-width:700px){.about-value-list{grid-template-columns:1fr}}

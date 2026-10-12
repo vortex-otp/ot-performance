@@ -21,6 +21,13 @@
     window.addEventListener('resize', function () { if (window.innerWidth > 960) setMenu(false); });
     window.addEventListener('firstmotion:modal', function () { setMenu(false); });
   }
+  var faqItems = Array.prototype.slice.call(document.querySelectorAll('.faq-list details'));
+  faqItems.forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (!item.open) return;
+      faqItems.forEach(function (other) { if (other !== item) other.open = false; });
+    });
+  });
   document.querySelectorAll('.yr').forEach(function (el) { el.textContent = new Date().getFullYear(); });
   // Preserve the existing Vortex event names and non-personal event payloads.
   function track(name, data) {

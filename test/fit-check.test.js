@@ -25,7 +25,7 @@ test('result.starts covers every Q4 answer value', () => {
 
 test('buildMessage HE: intro + all four answer labels + name, no verdict claim', () => {
   const msg = buildMessage('he', full, 'דנה', '');
-  assert.match(msg, /היי First Motion/);
+  assert.match(msg, /היי FirstMotion/);
   assert.match(msg, /הנה מה שעניתי/);
   assert.match(msg, /סוג עסק: לידים/);
   assert.match(msg, /שיווק פעיל: כן, באופן קבוע/);
@@ -49,7 +49,7 @@ test('buildMessage EN uses English labels', () => {
 });
 
 test('buildMessage unknown lang falls back to HE', () => {
-  assert.match(buildMessage('xx', full, 'דנה', ''), /היי First Motion/);
+  assert.match(buildMessage('xx', full, 'דנה', ''), /היי FirstMotion/);
 });
 
 test('buildMessage output URL-encodes with newlines', () => {

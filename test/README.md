@@ -41,9 +41,10 @@ Useful options:
 
 The runner starts and stops its own loopback-only static server. Each case uses a fresh browser context. ALL requests outside that local origin are aborted before transmission, including analytics scripts, tracking pixels, external images and WhatsApp navigation. Pop-up calls are intercepted. Only synthetic test names and an `example.test` business are used; no leads are sent. Blocked remote images may change the appearance of old pages that depended on a CDN, so their screenshots are functional/layout references rather than complete visual baselines.
 
-The 33 checks cover:
+The 41 checks cover:
 
 - 375, 390, 768 and 1440 px layouts in Hebrew/RTL and English/LTR, including overflow after scrolling through each section
+- All four supporting-page layouts at every viewport and in both languages
 - Language controls, translated hero text, button state, reload/other-tab/legal-page persistence
 - Mobile menu open, Escape/focus restoration, and close after choosing a link
 - Every local page/hash link and safe external links
@@ -53,7 +54,7 @@ The 33 checks cover:
 - A fully encoded WhatsApp URL intercepted before leaving the local site
 - Direct-contact URL wiring and translated WhatsApp draft
 - Accessibility size, contrast, grayscale, link emphasis, readable font and reduced-motion controls; persistence and reset
-- FAQ open/close behavior and the existing one-answer-at-a-time contract
+- Service accordion interaction and FAQ open/close behavior and the existing one-answer-at-a-time contract
 - Normal-motion startup, resize and modal interactions
 
 The suite exits nonzero on any failed check or a browser-launch failure. `report.json` distinguishes failed checks from a `fatalError` that prevented the checks from running. A zero-check launch failure is NOT a browser pass.

@@ -37,7 +37,7 @@
       cta: 'נמשיך בוואטסאפ', helper: 'הפרטים יופיעו בהודעה שתוכלו לבדוק ולשלוח בוואטסאפ.', comingSoon: 'בקרוב',
       nameLabel: 'שם', nameRequired: 'נא למלא שם', businessLabel: 'אתר / עסק (רשות)',
       wa: {
-        greeting: 'היי First Motion 👋', intro: 'עשיתי את בדיקת ההתאמה, הנה מה שעניתי:',
+        greeting: 'היי FirstMotion 👋', intro: 'עשיתי את בדיקת ההתאמה, הנה מה שעניתי:',
         labels: { q1: 'סוג עסק', q2: 'שיווק פעיל', q3: 'הצעה מוכחת', q4: 'החסם המרכזי' },
         nameLine: 'השם שלי: ', businessLine: '• עסק/אתר: ', closing: 'אשמח לדבר.',
         // Pre-filled draft for the plain WhatsApp contact button — the visitor only has to press send.
@@ -74,7 +74,7 @@
       cta: 'Continue on WhatsApp', helper: 'Your details will appear in a message you can review and send on WhatsApp.', comingSoon: 'Coming soon',
       nameLabel: 'Name', nameRequired: 'Please enter a name', businessLabel: 'Site / business (optional)',
       wa: {
-        greeting: 'Hi First Motion 👋', intro: 'I took the compatibility check, here\'s what I answered:',
+        greeting: 'Hi FirstMotion 👋', intro: 'I took the compatibility check, here\'s what I answered:',
         labels: { q1: 'Business type', q2: 'Active marketing', q3: 'Proven offer', q4: 'Main constraint' },
         nameLine: 'My name: ', businessLine: '• Business/site: ', closing: 'Happy to talk.',
         // Pre-filled draft for the plain WhatsApp contact button — the visitor only has to press send.

@@ -189,6 +189,24 @@ async function closeAndCheck(page, trigger, method) {
     }
   }
 
+  for (const width of [375, 390, 768, 1440]) {
+    for (const lang of ['he', 'en']) {
+      await check(`Supporting-page layouts ${width}px ${lang}`, { width, lang }, async ({ page }) => {
+        for (const filename of ['about', 'privacy', 'terms', 'accessibility']) {
+          await page.goto(origin + '/pages/' + filename + '.html', { waitUntil: 'networkidle' });
+          assert.equal(await page.locator('html').getAttribute('dir'), lang === 'he' ? 'rtl' : 'ltr');
+          await verifyOverflow(page);
+          const sections = page.locator('main section');
+          for (let i = 0; i < await sections.count(); i++) {
+            await sections.nth(i).scrollIntoViewIfNeeded();
+            await verifyOverflow(page);
+          }
+          await page.screenshot({ path: path.join(out, `${filename}-${width}-${lang}.png`), fullPage: false });
+        }
+      });
+    }
+  }
+
   for (const width of [390, 1440]) {
     await check(`Language switching and persistence ${width}px`, { width }, async ({ page, context }) => {
       const headingHE = await page.locator('h1').textContent();
@@ -407,7 +425,15 @@ async function closeAndCheck(page, trigger, method) {
   }
 
   for (const lang of ['he', 'en']) {
-    await check(`FAQ interaction ${lang}`, { width: 390, lang }, async ({ page }) => {
+    await check(`FAQ and service accordion interaction ${lang}`, { width: 390, lang }, async ({ page }) => {
+      const services = page.locator('.service-list details');
+      for (let i = 0; i < await services.count(); i++) {
+        const item = services.nth(i);
+        const wasOpen = await item.evaluate(el => el.open);
+        await item.locator('summary').click();
+        assert.equal(await item.evaluate(el => el.open), !wasOpen, 'Service summary toggles content');
+        await verifyOverflow(page);
+      }
       const details = page.locator('.faq-list details');
       assert.ok(await details.count() >= 2, 'FAQ has at least two items');
       await details.nth(0).locator('summary').click();
