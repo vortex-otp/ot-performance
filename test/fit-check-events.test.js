@@ -25,3 +25,11 @@ test('fitEventProps falls back to he and marks missing answers', () => {
   assert.strictEqual(props.lang, 'he');
   assert.strictEqual(props.marketing, 'unknown');
 });
+
+test('fitEventProps adds a stable eventId so Vortex drops repeat submits', () => {
+  const a = fitEventProps(full, 'he', false, 'run1-submitted');
+  const b = fitEventProps(full, 'he', false, 'run1-submitted');
+  assert.strictEqual(a.eventId, 'run1-submitted');
+  assert.strictEqual(a.eventId, b.eventId);
+  assert.strictEqual(fitEventProps(full, 'he', false).eventId, undefined);
+});

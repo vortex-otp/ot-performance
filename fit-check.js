@@ -106,20 +106,26 @@
   }
 
   // Answer codes only: name and business text stay in the WhatsApp draft, never in tracking.
-  function fitEventProps(a, lang, hasBusiness) {
-    return {
+  function fitEventProps(a, lang, hasBusiness, eventId) {
+    var props = {
       business_type: a.q1 || 'unknown', marketing: a.q2 || 'unknown',
       offer: a.q3 || 'unknown', constraint: a.q4 || 'unknown',
       lang: lang === 'en' ? 'en' : 'he', has_business: !!hasBusiness
     };
+    // Vortex upserts on eventId, so a repeat click in the same run stays one event.
+    if (eventId) props.eventId = eventId;
+    return props;
   }
 
+  // Tracking must never block the WhatsApp handoff.
   function track(name, props) {
-    if (typeof window !== 'undefined' && typeof window.vtx === 'function') window.vtx('track', name, props);
+    try {
+      if (typeof window !== 'undefined' && typeof window.vtx === 'function') window.vtx('track', name, props);
+    } catch (e) { if (window.console) console.warn('fit-check tracking failed', e); }
   }
 
   if (typeof document !== 'undefined') {
-    var fit = { open: false, step: 0, answers: {}, name: '', business: '', lastFocus: null };
+    var fit = { open: false, step: 0, answers: {}, name: '', business: '', lastFocus: null, runId: '' };
     var overlay, modal, bodyEl, prevOverflow = '', closeTimer;
 
     function lang() { return document.documentElement.lang === 'en' ? 'en' : 'he'; }
@@ -177,6 +183,7 @@
       buildModal();
       // EVENT SEAM: fit_check_started — attach Meta pixel custom event here when pixel lands.
       fit.open = true; fit.step = 0; fit.answers = {};
+      fit.runId = Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
       fit.name = ''; fit.business = '';
       fit.lastFocus = document.activeElement;
       syncChrome();
@@ -256,7 +263,7 @@
       if (fit.step < last) { fit.step += 1; renderStep(); }
       else {
         fit.step = last + 1;
-        track('fit_check_completed', fitEventProps(fit.answers, lang(), false));
+        track('fit_check_completed', fitEventProps(fit.answers, lang(), false, 'fc-' + fit.runId + '-completed'));
         renderResult();
       }
     }
@@ -296,7 +303,7 @@
       err.textContent = '';
       fit.name = name; fit.business = business;
       // sendBeacon in t.js survives the navigation to wa.me below.
-      track('fit_check_submitted', fitEventProps(fit.answers, lang(), !!business));
+      track('fit_check_submitted', fitEventProps(fit.answers, lang(), !!business, 'fc-' + fit.runId + '-submitted'));
       var msg = buildMessage(lang(), fit.answers, name, business);
       window.location.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(msg);
     }
