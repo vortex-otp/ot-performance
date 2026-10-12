@@ -25,16 +25,16 @@
           { v: 'learn', label: 'אי אפשר למדוד מה עובד' }, { v: 'unsure', label: 'לא בטוח/ה' } ] }
       ],
       result: {
-        title: 'יש כאן התאמה',
-        body: 'נשמע שיש בסיס טוב להתחיל ממנו. הנה מאיפה היינו מתחילים איתכם:',
+        title: 'יש לנו נקודת פתיחה',
+        body: 'לפי התשובות שלכם, זה הנושא שכדאי לבדוק יחד בשיחה:',
         starts: {
-          operate: 'נראה שהחסם המרכזי הוא בטיפול בלידים — נתחיל משכבת OPERATE: מהירות תגובה, סינון וניתוב.',
-          convert: 'נראה שהחסם המרכזי הוא בהמרה — נתחיל משכבת CONVERT: העמוד, ההצעה והצעד הבא.',
-          learn: 'נראה שהחסם המרכזי הוא מדידה — נתחיל משכבת LEARN: טראקינג, ייחוס והחלטות מדאטה.',
+          operate: 'נראה שהחסם המרכזי הוא בטיפול בלידים — נבדוק יחד את מהירות התגובה, הסינון והניתוב.',
+          convert: 'נראה שהחסם המרכזי הוא בהמרה — נבדוק יחד את העמוד, ההצעה והצעד הבא.',
+          learn: 'נראה שהחסם המרכזי הוא מדידה — נבדוק יחד את הטראקינג, הייחוס והחלטות הדאטה.',
           unsure: 'נתחיל במיפוי מהיר כדי לזהות את צוואר הבקבוק המרכזי.'
         }
       },
-      cta: 'שלחו את הפרטים בוואטסאפ', comingSoon: 'בקרוב',
+      cta: 'נמשיך בוואטסאפ', helper: 'הפרטים יופיעו בהודעה שתוכלו לבדוק ולשלוח בוואטסאפ.', comingSoon: 'בקרוב',
       nameLabel: 'שם', nameRequired: 'נא למלא שם', businessLabel: 'אתר / עסק (רשות)',
       wa: {
         greeting: 'היי First Motion 👋', intro: 'עשיתי את בדיקת ההתאמה, הנה מה שעניתי:',
@@ -62,16 +62,16 @@
           { v: 'learn', label: 'Can\'t measure what works' }, { v: 'unsure', label: 'Not sure' } ] }
       ],
       result: {
-        title: 'Looks like a fit',
-        body: 'Sounds like a solid basis to build on. Here\'s where we\'d start with you:',
+        title: 'We have a starting point',
+        body: 'Based on your answers, here is a useful topic to explore together:',
         starts: {
-          operate: 'Your main constraint looks like lead handling — we\'d start with the OPERATE layer: response speed, qualification and routing.',
-          convert: 'Your main constraint looks like conversion — we\'d start with the CONVERT layer: the page, the offer and the next step.',
-          learn: 'Your main constraint looks like measurement — we\'d start with the LEARN layer: tracking, attribution and data-driven decisions.',
+          operate: 'Your main constraint looks like lead handling — we\'d look at response speed, qualification and routing together.',
+          convert: 'Your main constraint looks like conversion — we\'d look at the page, the offer and the next step together.',
+          learn: 'Your main constraint looks like measurement — we\'d look at tracking, attribution and data-driven decisions together.',
           unsure: 'We\'d start with a quick mapping to find the main bottleneck.'
         }
       },
-      cta: 'Send the details on WhatsApp', comingSoon: 'Coming soon',
+      cta: 'Continue on WhatsApp', helper: 'Your details will appear in a message you can review and send on WhatsApp.', comingSoon: 'Coming soon',
       nameLabel: 'Name', nameRequired: 'Please enter a name', businessLabel: 'Site / business (optional)',
       wa: {
         greeting: 'Hi First Motion 👋', intro: 'I took the compatibility check, here\'s what I answered:',
@@ -107,7 +107,7 @@
 
   if (typeof document !== 'undefined') {
     var fit = { open: false, step: 0, answers: {}, name: '', business: '', lastFocus: null };
-    var overlay, modal, bodyEl, prevOverflow = '';
+    var overlay, modal, bodyEl, prevOverflow = '', closeTimer;
 
     function lang() { return document.documentElement.lang === 'en' ? 'en' : 'he'; }
 
@@ -159,6 +159,8 @@
     }
 
     function openModal() {
+      if (fit.open) return;
+      clearTimeout(closeTimer);
       buildModal();
       // EVENT SEAM: fit_check_started — attach Meta pixel custom event here when pixel lands.
       fit.open = true; fit.step = 0; fit.answers = {};
@@ -177,14 +179,15 @@
     }
 
     function closeModal() {
-      if (!overlay) return;
+      if (!overlay || !fit.open) return;
       fit.open = false;
       overlay.classList.remove('open');
       document.body.style.overflow = prevOverflow;
       if (location.hash === '#fit-check') {
         history.replaceState(null, '', location.pathname + location.search);
       }
-      setTimeout(function () { overlay.hidden = true; }, 220);
+      clearTimeout(closeTimer);
+      closeTimer = setTimeout(function () { if (!fit.open) overlay.hidden = true; }, 220);
       window.dispatchEvent(new CustomEvent('firstmotion:modal', { detail: { open: false } }));
       if (fit.lastFocus && fit.lastFocus.focus) fit.lastFocus.focus();
     }
@@ -259,7 +262,8 @@
         '<p class="fitc-err" role="alert"></p>' +
         '<button type="button" class="button button-primary fitc-cta"' +
         (numberSet ? '' : ' disabled') + '>' +
-        (numberSet ? c.cta : c.comingSoon) + '</button></div>';
+        (numberSet ? c.cta : c.comingSoon) + '</button>' +
+        '<p class="fitc-helper">' + c.helper + '</p></div>';
       bodyEl.innerHTML = html;
       if (numberSet) bodyEl.querySelector('.fitc-cta').addEventListener('click', submitWhatsApp);
 
